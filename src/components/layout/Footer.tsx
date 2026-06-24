@@ -52,34 +52,25 @@ const socialLinks = [
     ),
   },
 ];
+import Link from "next/link";
 
-const treatments = [
-  "BIO Integrated FUE",
-  "DHI Hair Transplant",
-  "Sapphire Hair Transplant",
-  "Male Hair Transplant",
-  "Female Hair Transplant",
-  "GFC Treatment",
-  "Exosome Therapy",
-  "Beard & Moustache Transplant",
+const treatmentsList = [
+  { label: "BIO Integrated FUE", href: "/treatments/bio-fue" },
+  { label: "DHI Hair Transplant", href: "/treatments/dhi-hair-transplant" },
+  { label: "FUE Hair Transplant", href: "/treatments/fue-hair-transplant" },
+  { label: "Female Hair Transplant", href: "/treatments/female-hair-transplant" },
+  { label: "Beard Transplant", href: "/treatments/beard-transplant" },
 ];
 
 const quickLinks = [
-  { label: "Why Trichova", href: "#why-trichova" },
-  { label: "Technology", href: "#technology" },
-  { label: "Results Gallery", href: "#results" },
-  { label: "Patient Testimonials", href: "#testimonials" },
-  { label: "FAQs", href: "#faq" },
-  { label: "Book Consultation", href: "#contact" },
+  { label: "Treatments", href: "/treatments" },
+  { label: "Why Trichova", href: "/why-trichova" },
+  { label: "Results Gallery", href: "/results" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Book Consultation", href: "/book-consultation" },
 ];
 
-
 export default function Footer() {
-  const scrollTo = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-navy-950 text-white" id="contact">
       {/* Top Gradient Line */}
@@ -144,19 +135,18 @@ export default function Footer() {
               Treatments
             </h3>
             <ul className="space-y-3">
-              {treatments.map((t) => (
-                <li key={t}>
-                  <a
-                    href="#services"
-                    onClick={() => scrollTo("#services")}
+              {treatmentsList.map((t) => (
+                <li key={t.label}>
+                  <Link
+                    href={t.href}
                     className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 group"
                   >
                     <ArrowRight
                       size={12}
                       className="text-gold group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0"
                     />
-                    {t}
-                  </a>
+                    {t.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -176,8 +166,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <button
-                    onClick={() => scrollTo(href)}
+                  <Link
+                    href={href}
                     className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 group"
                   >
                     <ArrowRight
@@ -185,7 +175,7 @@ export default function Footer() {
                       className="text-gold group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0"
                     />
                     {label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

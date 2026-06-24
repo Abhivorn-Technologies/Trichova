@@ -11,10 +11,9 @@ const results = [
   {
     id: 1,
     category: "Male",
-    grafts: 2800,
-    technique: "DHI",
-    months: 12,
-    label: "Grade III Alopecia",
+    name: "Satya Ottur",
+    technique: "UHDHT",
+    grade: "GRADE 6",
     beforeDesc: "Significant frontal recession",
     afterDesc: "Full frontal hairline restored",
     splitImage: "/images/split_1.png",
@@ -22,10 +21,9 @@ const results = [
   {
     id: 2,
     category: "Male",
-    grafts: 3500,
-    technique: "BIOFUE",
-    months: 14,
-    label: "Grade V Alopecia",
+    name: "Rusmik Oza",
+    technique: "UHDHT",
+    grade: "GRADE 7",
     beforeDesc: "Extensive crown thinning",
     afterDesc: "Dense crown coverage",
     splitImage: "/images/split_2.png",
@@ -33,10 +31,9 @@ const results = [
   {
     id: 3,
     category: "Female",
-    grafts: 1800,
+    name: "Priya Sharma",
     technique: "DHI",
-    months: 10,
-    label: "Diffuse Hair Loss",
+    grade: "DIFFUSE",
     beforeDesc: "Significant density loss",
     afterDesc: "Full density restored",
     splitImage: "/images/split_3.png",
@@ -44,10 +41,9 @@ const results = [
   {
     id: 4,
     category: "Beard",
-    grafts: 1200,
+    name: "Anil Kumar",
     technique: "Sapphire",
-    months: 8,
-    label: "Patchy Beard",
+    grade: "PATCHY",
     beforeDesc: "Patchy beard growth",
     afterDesc: "Full uniform beard",
     splitImage: "/images/split_4.png",
@@ -55,10 +51,9 @@ const results = [
   {
     id: 5,
     category: "Advanced Cases",
-    grafts: 5000,
+    name: "Suresh Reddy",
     technique: "BIOFUE",
-    months: 18,
-    label: "Grade VII Alopecia",
+    grade: "GRADE 7",
     beforeDesc: "Complete crown and mid-scalp baldness",
     afterDesc: "Remarkable density restoration",
     splitImage: "/images/split_5.png",
@@ -66,126 +61,53 @@ const results = [
   {
     id: 6,
     category: "Male",
-    grafts: 2200,
+    name: "Vikram Singh",
     technique: "Sapphire",
-    months: 11,
-    label: "Hairline Redesign",
+    grade: "GRADE 3",
     beforeDesc: "High receded hairline",
     afterDesc: "Naturally lowered dense hairline",
     splitImage: "/images/split_6.png",
   },
 ];
 
-// Before-After slider component
+// Static Before-After card component matching new design
 function BeforeAfterCard({
   result,
-  onZoom,
 }: {
   result: (typeof results)[0];
-  onZoom: () => void;
 }) {
-  const [sliderPos, setSliderPos] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleMove = useCallback(
-    (clientX: number) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const pct = Math.min(Math.max((x / rect.width) * 100, 5), 95);
-      setSliderPos(pct);
-    },
-    []
-  );
-
   return (
-    <div className="bg-ivory-dark rounded-2xl overflow-hidden shadow-card border border-gold/20 hover:border-gold/50 hover:shadow-card-hover transition-all duration-300">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
       {/* Image comparison area */}
-      <div
-        ref={containerRef}
-        className="relative h-64 cursor-col-resize select-none overflow-hidden bg-ivory"
-        onMouseDown={() => setIsDragging(true)}
-        onMouseMove={(e) => isDragging && handleMove(e.clientX)}
-        onMouseUp={() => setIsDragging(false)}
-        onMouseLeave={() => setIsDragging(false)}
-        onTouchMove={(e) => handleMove(e.touches[0].clientX)}
-      >
-        {/* BEFORE - Shows left half of the split image */}
-        <div className="absolute inset-0 overflow-hidden">
-          {result.splitImage && (
-            <img
-              src={result.splitImage}
-              alt={result.beforeDesc}
-              className="absolute top-0 left-0 h-full w-[200%] max-w-none object-cover"
-              draggable={false}
-            />
-          )}
-          <div className="absolute bottom-3 left-3 px-2 py-1 rounded-lg bg-navy-950/60 text-ivory text-xs font-semibold backdrop-blur-sm z-10 pointer-events-none border border-gold/30">
-            BEFORE
-          </div>
+      <div className="relative h-60 w-full overflow-hidden">
+        {result.splitImage && (
+          <img
+            src={result.splitImage}
+            alt={`${result.name} - Before and After`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
+        
+        {/* BEFORE Badge */}
+        <div className="absolute bottom-0 left-0 bg-navy-950 text-white text-[10px] font-bold px-4 py-1.5 rounded-tr-xl tracking-wider z-10">
+          BEFORE
         </div>
-
-        {/* AFTER - Shows right half of the split image, clipped by slider */}
-        <div
-          className="absolute inset-0 overflow-hidden"
-          style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
-        >
-          {result.splitImage && (
-            <img
-              src={result.splitImage}
-              alt={result.afterDesc}
-              className="absolute top-0 left-[-100%] h-full w-[200%] max-w-none object-cover"
-              draggable={false}
-            />
-          )}
-          <div className="absolute bottom-3 right-3 px-2 py-1 rounded-lg bg-navy-950/60 text-ivory text-xs font-semibold backdrop-blur-sm z-10 pointer-events-none border border-gold/30">
-            AFTER
-          </div>
+        
+        {/* AFTER Badge */}
+        <div className="absolute bottom-0 right-0 bg-[#FF6B35] text-white text-[10px] font-bold px-4 py-1.5 rounded-tl-xl tracking-wider z-10">
+          AFTER
         </div>
-
-        {/* Divider */}
-        <div
-          className="absolute top-0 bottom-0 w-0.5 bg-gold-light z-10 pointer-events-none shadow-[0_0_8px_rgba(201,161,90,0.6)]"
-          style={{ left: `${sliderPos}%` }}
-        >
-          {/* Handle */}
-          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-ivory shadow-gold flex items-center justify-center border border-gold/40">
-            <div className="flex gap-1">
-              <div className="w-0.5 h-4 rounded-full bg-gold/50" />
-              <div className="w-0.5 h-4 rounded-full bg-gold/50" />
-              <div className="w-0.5 h-4 rounded-full bg-gold/50" />
-            </div>
-          </div>
-        </div>
-
-        {/* Zoom button */}
-        <button
-          onClick={onZoom}
-          className="absolute top-3 right-3 z-20 w-8 h-8 rounded-lg bg-navy-950/40 text-ivory backdrop-blur-sm flex items-center justify-center hover:bg-navy-950/60 transition-colors border border-gold/30"
-        >
-          <ZoomIn size={14} />
-        </button>
       </div>
 
-      {/* Info */}
-      <div className="p-4">
-        <div className="flex items-start justify-between mb-2">
-          <div>
-            <h3 className="font-bold text-navy-900 text-sm">{result.label}</h3>
-            <div className="text-slate-400 text-xs mt-0.5">{result.category} • {result.months} months</div>
-          </div>
-          <div className="text-right">
-            <div className="font-bold text-navy-900 text-sm">{result.grafts.toLocaleString()}</div>
-            <div className="text-slate-400 text-xs">grafts</div>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 mt-3">
-          <span className="px-2.5 py-1 rounded-full bg-gold/10 text-gold text-[10px] font-semibold border border-gold/20">
+      {/* Info Footer */}
+      <div className="p-4 flex items-center justify-between bg-white">
+        <h3 className="font-medium text-slate-700 text-sm">{result.name}</h3>
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-1 rounded-full bg-orange-50 text-[#FF6B35] text-[9px] font-bold uppercase tracking-wider">
             {result.technique}
           </span>
-          <span className="px-2.5 py-1 rounded-full bg-gold/10 text-gold text-[10px] font-semibold border border-gold/20">
-            Natural Results
+          <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-500 text-[9px] font-bold uppercase tracking-wider">
+            {result.grade}
           </span>
         </div>
       </div>
@@ -279,7 +201,7 @@ export default function Results() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
               >
-                <BeforeAfterCard result={result} onZoom={() => setZoomed(result.id)} />
+                <BeforeAfterCard result={result} />
               </motion.div>
             ))}
           </AnimatePresence>

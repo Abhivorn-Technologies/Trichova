@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, Star, Shield, Award, Zap, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
@@ -40,8 +40,22 @@ const stats = [
   },
 ];
 
+const heroImages = [
+  "/images/clinic-interior.jpg",
+  "/images/hero-confidence.jpg"
+];
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -61,29 +75,40 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy-950"
     >
       {/* ── BACKGROUND LAYERS ── */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
-        {/* Real hero image — fills right 60% with dark overlay on left */}
+      <motion.div style={{ y }} className="absolute inset-0 z-0 bg-navy-950">
+        {/* Real hero image carousel */}
         <div className="absolute inset-0">
-          <Image
-            src="/images/clinic-interior.jpg"
-            alt="Trichova Hair Studio — premium luxury clinic interior"
-            fill
-            priority
-            className="object-cover object-center"
-            style={{ objectPosition: "center 30%" }}
-          />
+          <AnimatePresence>
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={heroImages[currentImageIndex]}
+                alt="Trichova Hair Studio — advanced hair restoration"
+                fill
+                priority={currentImageIndex === 0}
+                className="object-cover object-center"
+                style={{ objectPosition: "center 30%" }}
+              />
+            </motion.div>
+          </AnimatePresence>
           {/* Deep luxury navy gradient overlay: strong on left, fades on right */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 z-10 pointer-events-none"
             style={{
               background:
                 "linear-gradient(105deg, #0E1A2B 0%, #162B4Dcc 35%, #162B4D88 55%, #C9A15A22 80%, transparent 100%)",
             }}
           />
           {/* Bottom fade for stat cards */}
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-navy-950/90 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-navy-950/90 to-transparent z-10 pointer-events-none" />
           {/* Top fade for navbar */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-navy-950/80 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-navy-950/80 to-transparent z-10 pointer-events-none" />
         </div>
 
         {/* Gradient orbs for extra luxury depth */}
@@ -121,7 +146,7 @@ export default function Hero() {
               <Star size={18} className="text-gold fill-gold" />
             </div>
             <div>
-              <div className="text-ivory text-sm font-bold leading-none">4.9 / 5.0</div>
+              <div className="text-ivory text-sm font-bold leading-none">4.7 / 5.0</div>
               <div className="text-ivory/60 text-[11px] mt-0.5">500+ Patient Reviews</div>
             </div>
           </div>

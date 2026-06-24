@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import BookingModal from "@/components/BookingModal";
 
 export const metadata: Metadata = {
   title: "Trichova Hair Studio | Advanced Hair Transplant & Restoration",
@@ -64,7 +67,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <Navbar />
+        {children}
+        <Footer />
+        <BookingModal />
+      </body>
     </html>
   );
 }

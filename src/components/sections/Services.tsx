@@ -13,10 +13,12 @@ import {
   Scissors,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
     id: "bio-fue",
+    href: "/treatments/bio-fue",
     icon: Microscope,
     title: "BIO Integrated FUE",
     shortTitle: "BIOFUE",
@@ -31,6 +33,7 @@ const services = [
   },
   {
     id: "dhi",
+    href: "/treatments/dhi-hair-transplant",
     icon: Zap,
     title: "DHI Hair Transplant",
     shortTitle: "DHI",
@@ -45,6 +48,7 @@ const services = [
   },
   {
     id: "sapphire",
+    href: "/treatments/fue-hair-transplant",
     icon: Gem,
     title: "Sapphire Hair Transplant",
     shortTitle: "Sapphire FUE",
@@ -59,6 +63,7 @@ const services = [
   },
   {
     id: "male",
+    href: "/treatments/fue-hair-transplant",
     icon: UserCheck,
     title: "Male Hair Transplant",
     shortTitle: "Male",
@@ -73,6 +78,7 @@ const services = [
   },
   {
     id: "female",
+    href: "/treatments/female-hair-transplant",
     icon: Users,
     title: "Female Hair Transplant",
     shortTitle: "Female",
@@ -87,6 +93,7 @@ const services = [
   },
   {
     id: "gfc",
+    href: "/treatments",
     icon: Droplets,
     title: "GFC Treatment",
     shortTitle: "GFC",
@@ -101,6 +108,7 @@ const services = [
   },
   {
     id: "exosome",
+    href: "/treatments",
     icon: Sparkles,
     title: "Exosome Therapy",
     shortTitle: "Exosome",
@@ -115,6 +123,7 @@ const services = [
   },
   {
     id: "beard",
+    href: "/treatments/beard-transplant",
     icon: Scissors,
     title: "Beard & Moustache Transplant",
     shortTitle: "Beard",
@@ -202,50 +211,50 @@ export default function Services() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.div
-                key={service.id}
-                variants={cardVariants}
-                whileHover={{ y: -8, scale: 1.01 }}
-                className={`group relative bg-ivory rounded-2xl p-6 border border-gold/20 ${service.borderColor} shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer overflow-hidden`}
-              >
-                {/* Gradient hover overlay */}
-                <div
-                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                />
-
-                {/* Tag */}
-                <div className="flex items-start justify-between mb-4 relative z-10">
+              <motion.div key={service.id} variants={cardVariants} whileHover={{ y: -8, scale: 1.01 }}>
+                <Link
+                  href={service.href}
+                  className={`group relative block bg-ivory rounded-2xl p-6 border border-gold/20 ${service.borderColor} shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer overflow-hidden h-full`}
+                >
+                  {/* Gradient hover overlay */}
                   <div
-                    className={`w-12 h-12 rounded-xl ${service.lightColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <Icon size={22} className={service.iconColor} />
-                  </div>
-                  <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border border-navy-900/20 ${service.tagColor}`}>
-                    {service.tag}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <h3 className="font-bold text-navy-900 text-base mb-2 leading-tight relative z-10">
-                  {service.title}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed mb-4 line-clamp-3 relative z-10">
-                  {service.description}
-                </p>
-
-                {/* CTA */}
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-gold group-hover:gap-2.5 transition-all duration-200 relative z-10">
-                  Learn More
-                  <ArrowRight
-                    size={13}
-                    className="group-hover:translate-x-1 transition-transform duration-200"
+                    className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                   />
-                </div>
 
-                {/* Bottom accent line */}
-                <div
-                  className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-2xl`}
-                />
+                  {/* Tag */}
+                  <div className="flex items-start justify-between mb-4 relative z-10">
+                    <div
+                      className={`w-12 h-12 rounded-xl ${service.lightColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      <Icon size={22} className={service.iconColor} />
+                    </div>
+                    <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border border-navy-900/20 ${service.tagColor}`}>
+                      {service.tag}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="font-bold text-navy-900 text-base mb-2 leading-tight relative z-10">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed mb-4 line-clamp-3 relative z-10">
+                    {service.description}
+                  </p>
+
+                  {/* CTA */}
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-gold group-hover:gap-2.5 transition-all duration-200 relative z-10">
+                    Learn More
+                    <ArrowRight
+                      size={13}
+                      className="group-hover:translate-x-1 transition-transform duration-200"
+                    />
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-2xl`}
+                  />
+                </Link>
               </motion.div>
             );
           })}

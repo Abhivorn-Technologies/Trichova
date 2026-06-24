@@ -5,7 +5,7 @@ import { CheckCircle2, XCircle, Star } from "lucide-react";
 
 const features = [
   "Doctor-Performed Surgeries",
-  "Advanced DHI & Sapphire Techniques",
+  "DHT & Sapphire Techniques",
   "95–98% Graft Survival Rate",
   "Artistic Hairline Design",
   "Imported Premium Instruments",

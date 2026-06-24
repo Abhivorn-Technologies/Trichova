@@ -46,11 +46,19 @@ export default function BookingModal() {
     };
     window.addEventListener("hashchange", handleHashChange);
 
+    // Auto-open every 30 seconds if not already submitted
+    const autoOpenInterval = setInterval(() => {
+      if (!submitted) {
+        setIsOpen(true);
+      }
+    }, 30000);
+
     return () => {
       window.removeEventListener("open-booking-modal", handleOpen);
       window.removeEventListener("hashchange", handleHashChange);
+      clearInterval(autoOpenInterval);
     };
-  }, []);
+  }, [submitted]);
 
   // Prevent scrolling when modal is open
   useEffect(() => {

@@ -26,7 +26,7 @@ const advantages = [
   },
   {
     icon: Microscope,
-    title: "Advanced DHI & Sapphire Techniques",
+    title: "DHT & Sapphire Techniques",
     desc: "We use only the most advanced, minimally invasive methods available globally.",
     color: "from-gold/20 to-gold-light/10",
     iconColor: "text-gold",
