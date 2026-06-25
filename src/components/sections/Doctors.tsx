@@ -9,7 +9,7 @@ const doctors = [
     name: "Dr. Jagadish Kiran",
     qualifications: "(M.S., M.Ch)",
     description:
-      "Dr. Jagadish Kiran, M.B.B.S., M.S. (General Surgery), M.Ch. (Plastic Surgery), is a board-certified cosmetic, plastic, and reconstructive surgeon with over 14 years of expertise. He completed fellowship training in cosmetic surgery, specializing in procedures such as gynecomastia, liposuction, breast augmentation and reduction, rhinoplasty, and non-surgical treatments like injectable dermal fillers. Renowned for his precision and premium treatments, his clinic is one of the premier plastic surgery centers in the state.",
+      "Dr. Jagadish Kiran, M.B.B.S., M.S. (General Surgery), M.Ch. (Plastic Surgery), is a board-certified cosmetic, plastic, and reconstructive surgeon with over 14 years of expertise. He completed fellowship training in cosmetic surgery, specializing in procedures such as Hair Transplant, gynecomastia, liposuction, breast augmentation and reduction, rhinoplasty, and non-surgical treatments like injectable dermal fillers. Renowned for his precision and premium treatments, his clinic is one of the premier plastic surgery centers in the state.",
     image: "/images/dr-jagadish.jpg",
   },
   {
