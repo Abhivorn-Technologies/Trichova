@@ -5,7 +5,7 @@ import Comparison from "@/components/sections/Comparison";
 
 export const metadata: Metadata = {
   title: "Treatments | Advanced Hair Transplant Services",
-  description: "Explore our world-class hair restoration treatments including DHI, BIOFUE, Sapphire FUE, Female Hair Transplant, and Beard Restoration.",
+  description: "Explore our world-class hair restoration treatments including DHT, BIOFUE, Sapphire FUE, Female Hair Transplant, and Beard Restoration.",
 };
 
 export default function TreatmentsPage() {

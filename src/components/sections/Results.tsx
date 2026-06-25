@@ -32,7 +32,7 @@ const results = [
     id: 3,
     category: "Female",
     name: "Priya Sharma",
-    technique: "DHI",
+    technique: "DHT",
     grade: "DIFFUSE",
     beforeDesc: "Significant density loss",
     afterDesc: "Full density restored",

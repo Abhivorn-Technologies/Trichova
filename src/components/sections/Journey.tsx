@@ -40,7 +40,7 @@ const steps = [
     id: 3,
     icon: Scissors,
     title: "Procedure",
-    desc: "Doctor-led DHI or BIOFUE procedure under local anaesthesia. Comfortable, precise, and completely painless.",
+    desc: "Doctor-led DHT or BIOFUE procedure under local anaesthesia. Comfortable, precise, and completely painless.",
     detail: "6–8 hours",
     color: "from-gold to-gold-light",
     lightBg: "bg-gold/10",

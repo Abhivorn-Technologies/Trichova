@@ -9,7 +9,7 @@ const faqs = [
     id: 1,
     question: "How much does a hair transplant cost at Trichova?",
     answer:
-      "Hair transplant cost at Trichova is customized based on the number of grafts required, the technique chosen (DHI, Sapphire, BIOFUE), and the complexity of your case. Pricing is determined after a thorough consultation and hair analysis. We offer transparent, all-inclusive pricing with no hidden charges. Book a free consultation to get a personalized quote.",
+      "Hair transplant cost at Trichova is customized based on the number of grafts required, the technique chosen (DHT, Sapphire, BIOFUE), and the complexity of your case. Pricing is determined after a thorough consultation and hair analysis. We offer transparent, all-inclusive pricing with no hidden charges. Book a free consultation to get a personalized quote.",
     category: "Cost",
   },
   {
@@ -49,16 +49,16 @@ const faqs = [
   },
   {
     id: 7,
-    question: "What is the difference between DHI and Sapphire FUE?",
+    question: "What is the difference between DHT and Sapphire FUE?",
     answer:
-      "Both are advanced minimally invasive techniques, but they differ in the implantation method. Sapphire FUE uses ultra-sharp sapphire crystal blades to create micro-channels, then individually places grafts — offering excellent density and minimal scarring. DHI (Direct Hair Implantation) uses the Choi Implanter Pen to extract and implant in one step without creating channels first — allowing no-shave procedures and superior density control. Our doctors will recommend the best technique for your specific hair loss pattern.",
+      "Both are advanced minimally invasive techniques, but they differ in the implantation method. Sapphire FUE uses ultra-sharp sapphire crystal blades to create micro-channels, then individually places grafts — offering excellent density and minimal scarring. DHT (Direct Hair Implantation) uses the Choi Implanter Pen to extract and implant in one step without creating channels first — allowing no-shave procedures and superior density control. Our doctors will recommend the best technique for your specific hair loss pattern.",
     category: "Procedure",
   },
   {
     id: 8,
     question: "Can women undergo hair transplant surgery?",
     answer:
-      "Absolutely. Female hair transplant is one of our specialized services. Women typically experience diffuse thinning (Ludwig pattern) rather than receding hairlines. DHI is particularly excellent for female patients as it allows no-shave procedures and precise graft placement in thinning areas without disturbing existing hair. Our female hair transplant protocols are customized to preserve natural hair distribution while restoring density.",
+      "Absolutely. Female hair transplant is one of our specialized services. Women typically experience diffuse thinning (Ludwig pattern) rather than receding hairlines. DHT is particularly excellent for female patients as it allows no-shave procedures and precise graft placement in thinning areas without disturbing existing hair. Our female hair transplant protocols are customized to preserve natural hair distribution while restoring density.",
     category: "Procedure",
   },
 ];

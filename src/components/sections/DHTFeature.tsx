@@ -56,9 +56,9 @@ const stats = [
   { value: "12 Months", label: "Full Results", sub: "Natural growth cycle" },
 ];
 
-export default function DHIFeature() {
+export default function DHTFeature() {
   return (
-    <section id="dhi-technology" className="section-padding bg-ivory overflow-hidden">
+    <section id="dht-technology" className="section-padding bg-ivory overflow-hidden">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
@@ -68,7 +68,7 @@ export default function DHIFeature() {
             viewport={{ once: false }}
             className="flex justify-center mb-4"
           >
-            <span className="badge-gold">DHI Technology</span>
+            <span className="badge-gold">DHT Technology</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function DHIFeature() {
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover" style={{ minHeight: "500px" }}>
               <Image
                 src="/images/procedure-team.jpg"
-                alt="Trichova doctor-led DHI hair transplant procedure in progress"
+                alt="Trichova doctor-led DHT hair transplant procedure in progress"
                 fill
                 className="object-cover object-center"
                 priority
@@ -190,13 +190,13 @@ export default function DHIFeature() {
             className="space-y-6"
           >
             <div>
-              <div className="badge-gold mb-4">Why DHI at Trichova</div>
+              <div className="badge-gold mb-4">Why DHT at Trichova</div>
               <h3 className="font-serif font-bold text-navy-900 text-2xl md:text-3xl leading-tight mb-4">
                 Superior outcomes through{" "}
                 <span className="gradient-text-gold">Precision Medicine</span>
               </h3>
               <p className="text-slate-500 leading-relaxed">
-                Every DHI procedure at Trichova is performed exclusively by our senior doctors —
+                Every DHT procedure at Trichova is performed exclusively by our senior doctors —
                 never delegated to technicians — ensuring the highest standard of care for every single graft.
               </p>
             </div>
@@ -253,10 +253,10 @@ export default function DHIFeature() {
               className="block"
             >
               <button
-                id="dhi-cta"
+                id="dht-cta"
                 className="w-full btn-gold justify-center rounded-2xl"
               >
-                Book DHI Consultation
+                Book DHT Consultation
                 <Zap size={18} />
               </button>
             </a>

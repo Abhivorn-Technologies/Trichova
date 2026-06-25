@@ -44,8 +44,8 @@ const technologies = [
     stats: { survival: "90–93%", healing: "5–7 days", density: "Good", scar: "Minimal Dots" },
   },
   {
-    id: "dhi",
-    name: "DHI",
+    id: "dht",
+    name: "DHT",
     subtitle: "Direct Hair Implantation",
     color: "from-navy-950 to-navy-900",
     bgLight: "bg-ivory",
@@ -127,7 +127,7 @@ export default function Technology() {
             transition={{ delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto"
           >
-            Not all hair transplant techniques are equal. See why BIOFUE and DHI deliver 
+            Not all hair transplant techniques are equal. See why BIOFUE and DHT deliver 
             dramatically superior outcomes compared to conventional methods.
           </motion.p>
           <motion.div
@@ -233,7 +233,7 @@ export default function Technology() {
                     width:
                       selected === "traditional" ? "87%"
                       : selected === "fue" ? "91%"
-                      : selected === "dhi" ? "94%"
+                      : selected === "dht" ? "94%"
                       : "96%",
                   }}
                   transition={{ duration: 1, ease: "easeOut" }}
@@ -270,7 +270,7 @@ export default function Technology() {
                   <p className="text-slate-500 text-sm leading-relaxed">
                     {selected === "traditional" && "Traditional strip surgery (FUT) removes a strip of scalp, leaving a linear scar. It has the lowest graft survival rate and longest recovery time."}
                     {selected === "fue" && "FUE extracts individual follicles, leaving minimal dot scars. Better than strip surgery but lacks precision implantation control."}
-                    {selected === "dhi" && "DHI uses the Choi Implanter Pen for direct implantation, enabling precise angle control and higher density without channel-making step."}
+                    {selected === "dht" && "DHT uses the Choi Implanter Pen for direct implantation, enabling precise angle control and higher density without channel-making step."}
                     {selected === "biofue" && "BIOFUE combines FUE extraction with bioactive growth factors applied to grafts during the procedure, dramatically boosting survival rates and accelerating recovery."}
                   </p>
                 </div>

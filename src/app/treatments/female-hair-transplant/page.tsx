@@ -11,7 +11,7 @@ export default function FemaleTransplantPage() {
     <main>
       <PageHero 
         title="Female Hair Transplant" 
-        description="Hair loss in women requires a specialized, delicate approach. We offer advanced, no-shave DHI and regenerative treatments specifically designed to restore density and volume naturally."
+        description="Hair loss in women requires a specialized, delicate approach. We offer advanced, no-shave DHT and regenerative treatments specifically designed to restore density and volume naturally."
         imageSrc="/images/clinic-interior.jpg"
       />
       <div className="section-container py-20 bg-white">
@@ -22,7 +22,7 @@ export default function FemaleTransplantPage() {
               Unlike male pattern baldness, female hair loss often involves diffuse thinning rather than receding hairlines. This requires a much more nuanced diagnostic and treatment protocol.
             </p>
             <p>
-              At Trichova, our No-Shave DHI technique allows us to implant grafts seamlessly between your existing hair without requiring you to shave your head. This ensures maximum privacy and minimal disruption to your daily life.
+              At Trichova, our No-Shave DHT technique allows us to implant grafts seamlessly between your existing hair without requiring you to shave your head. This ensures maximum privacy and minimal disruption to your daily life.
             </p>
             <p>
               We often combine surgical transplants with regenerative therapies like Exosome Therapy and GFC (Growth Factor Concentrate) to stimulate dormant follicles and halt further thinning, providing a comprehensive solution.

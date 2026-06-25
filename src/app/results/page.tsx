@@ -4,7 +4,7 @@ import Results from "@/components/sections/Results";
 
 export const metadata: Metadata = {
   title: "Before & After Results | Trichova Hair Studio",
-  description: "View our gallery of life-changing hair transformations. See real before and after photos of our DHI and BIOFUE hair transplant patients.",
+  description: "View our gallery of life-changing hair transformations. See real before and after photos of our DHT and BIOFUE hair transplant patients.",
 };
 
 export default function ResultsPage() {

@@ -1,21 +1,21 @@
 import { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
-import DHIFeature from "@/components/sections/DHIFeature";
+import DHTFeature from "@/components/sections/DHTFeature";
 
 export const metadata: Metadata = {
-  title: "DHI Hair Transplant | Trichova Hair Studio",
-  description: "Direct Hair Implantation (DHI) at Trichova. Advanced, precise, and natural-looking hair transplants without shaving. Learn more and book a consultation.",
+  title: "DHT Hair Transplant | Trichova Hair Studio",
+  description: "Direct Hair Implantation (DHT) at Trichova. Advanced, precise, and natural-looking hair transplants without shaving. Learn more and book a consultation.",
 };
 
-export default function DHIPage() {
+export default function DHTPage() {
   return (
     <main>
       <PageHero 
-        title="DHI Hair Transplant" 
+        title="DHT Hair Transplant" 
         description="The ultimate precision in hair restoration. Direct Hair Implantation offers maximum density, total angle control, and the option to restore your hair without shaving your head."
         imageSrc="/images/hero-confidence.jpg"
       />
-      <DHIFeature />
+      <DHTFeature />
     </main>
   );
 }

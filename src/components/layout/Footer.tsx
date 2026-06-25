@@ -56,7 +56,7 @@ import Link from "next/link";
 
 const treatmentsList = [
   { label: "BIO Integrated FUE", href: "/treatments/bio-fue" },
-  { label: "DHI Hair Transplant", href: "/treatments/dhi-hair-transplant" },
+  { label: "DHT Hair Transplant", href: "/treatments/dht-hair-transplant" },
   { label: "FUE Hair Transplant", href: "/treatments/fue-hair-transplant" },
   { label: "Female Hair Transplant", href: "/treatments/female-hair-transplant" },
   { label: "Beard Transplant", href: "/treatments/beard-transplant" },
@@ -91,7 +91,7 @@ export default function Footer() {
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               World-class hair restoration clinic delivering natural, permanent results through
-              advanced DHI, Sapphire and BIOFUE technologies. Your confidence is our mission.
+              advanced DHT, Sapphire and BIOFUE technologies. Your confidence is our mission.
             </p>
 
             {/* Trust Badges */}

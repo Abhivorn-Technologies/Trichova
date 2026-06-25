@@ -14,11 +14,11 @@ export default function Logo({ className, isScrolled = false }: LogoProps) {
           maskImage: "url(/trichova_mainlogo.png)",
           maskSize: "contain",
           maskRepeat: "no-repeat",
-          maskPosition: "center",
+          maskPosition: "left center",
           WebkitMaskImage: "url(/trichova_mainlogo.png)",
           WebkitMaskSize: "contain",
           WebkitMaskRepeat: "no-repeat",
-          WebkitMaskPosition: "center",
+          WebkitMaskPosition: "left center",
           // Colors the top 55% (hair) bright gold, and bottom 45% (text) bright white or navy
           background: isScrolled
             ? "linear-gradient(to bottom, #D4AF37 0%, #B38728 55%, #0F172A 55.1%, #0F172A 100%)"

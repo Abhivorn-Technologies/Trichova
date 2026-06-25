@@ -9,7 +9,7 @@ const features = [
   "95–98% Graft Survival Rate",
   "Artistic Hairline Design",
   "Imported Premium Instruments",
-  "No-Shave DHI Available",
+  "No-Shave DHT Available",
   "Dedicated 24/7 Support",
   "25-Year Written Warranty",
   "Bio-Enhanced Graft Protocols",

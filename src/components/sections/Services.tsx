@@ -32,13 +32,13 @@ const services = [
     tagColor: "bg-navy-900/10 text-navy-900",
   },
   {
-    id: "dhi",
-    href: "/treatments/dhi-hair-transplant",
+    id: "dht",
+    href: "/treatments/dht-hair-transplant",
     icon: Zap,
-    title: "DHI Hair Transplant",
-    shortTitle: "DHI",
+    title: "DHT Hair Transplant",
+    shortTitle: "DHT",
     description:
-      "Direct Hair Implantation with Choi Implanter Pen for precise angle control and maximum density without shaving.",
+      "Direct Hair Transplantation with Choi Implanter Pen for precise angle control and maximum density without shaving.",
     color: "from-gold to-gold-light",
     lightColor: "bg-gold/10",
     iconColor: "text-gold",

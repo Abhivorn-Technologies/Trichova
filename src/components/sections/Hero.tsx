@@ -31,7 +31,7 @@ const stats = [
     border: "border-gold/30",
   },
   {
-    value: "DHI",
+    value: "DHT",
     label: "Advanced Technology",
     icon: Zap,
     color: "from-gold/20 to-gold-light/10",
@@ -152,7 +152,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* DHI live status — upper right */}
+        {/* DHT live status — upper right */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -164,7 +164,7 @@ export default function Hero() {
               <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
               <span className="text-white/90 text-[10px] font-bold uppercase tracking-wider">Live Procedure</span>
             </div>
-            <div className="text-ivory font-semibold text-sm">DHI Hair Transplant</div>
+            <div className="text-ivory font-semibold text-sm">DHT Hair Transplant</div>
             <div className="text-ivory/50 text-[10px] mt-0.5">3,200 grafts — In Progress</div>
             <div className="mt-2 h-1.5 rounded-full bg-ivory/10 overflow-hidden">
               <motion.div
@@ -246,7 +246,7 @@ export default function Hero() {
           >
             World-class hair transplant treatments delivering natural, permanent results through{" "}
             <span className="text-gold font-semibold">BIOFUE</span>,{" "}
-            <span className="text-gold font-semibold">DHI</span> and{" "}
+            <span className="text-gold font-semibold">DHT</span> and{" "}
             <span className="text-gold font-semibold">Sapphire</span> technologies.
           </motion.p>
 

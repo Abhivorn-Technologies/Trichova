@@ -7,11 +7,11 @@ import BookingModal from "@/components/BookingModal";
 export const metadata: Metadata = {
   title: "Trichova Hair Studio | Advanced Hair Transplant & Restoration",
   description:
-    "World-class hair transplant treatments delivering natural, permanent results through BIOFUE, DHI and Sapphire technologies. 95–98% graft survival rate. Doctor-led procedures. Book your free consultation today.",
+    "World-class hair transplant treatments delivering natural, permanent results through BIOFUE, DHT and Sapphire technologies. 95–98% graft survival rate. Doctor-led procedures. Book your free consultation today.",
   keywords: [
     "hair transplant",
     "hair restoration",
-    "DHI hair transplant",
+    "DHT hair transplant",
     "FUE hair transplant",
     "Sapphire hair transplant",
     "BIOFUE",
@@ -24,12 +24,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Trichova Hair Studio" }],
   creator: "Trichova Hair Studio",
+  icons: {
+    icon: "/trichova_favicon_ultra_zoomed.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     title: "Trichova Hair Studio | Advanced Hair Transplant & Restoration",
     description:
-      "World-class hair transplant treatments delivering natural, permanent results through BIOFUE, DHI and Sapphire technologies.",
+      "World-class hair transplant treatments delivering natural, permanent results through BIOFUE, DHT and Sapphire technologies.",
     siteName: "Trichova Hair Studio",
   },
   twitter: {
