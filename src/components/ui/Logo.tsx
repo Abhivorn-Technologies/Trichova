@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -8,22 +9,28 @@ interface LogoProps {
 export default function Logo({ className, isScrolled = false }: LogoProps) {
   return (
     <div className={cn("flex items-center justify-center", className)}>
-      <div
-        className="w-[260px] h-[95px] relative transition-all duration-300"
-        style={{
-          maskImage: "url(/trichova_mainlogo.png)",
-          maskSize: "contain",
-          maskRepeat: "no-repeat",
-          maskPosition: "left center",
-          WebkitMaskImage: "url(/trichova_mainlogo.png)",
-          WebkitMaskSize: "contain",
-          WebkitMaskRepeat: "no-repeat",
-          WebkitMaskPosition: "left center",
-          // Colors the top 55% (hair) bright gold, and bottom 45% (text) bright white or navy
-          background: isScrolled
-            ? "linear-gradient(to bottom, #D4AF37 0%, #B38728 55%, #0F172A 55.1%, #0F172A 100%)"
-            : "linear-gradient(to bottom, #FFE898 0%, #D4AF37 55%, #FFFFFF 55.1%, #FFFFFF 100%)",
-        }}
+      {/* White text logo for dark backgrounds (top of page / footer) */}
+      <Image
+        src="/trichova_logo_white_text.png"
+        alt="Trichova Logo Light"
+        width={90}
+        height={33}
+        className={cn("object-contain transition-opacity duration-300", isScrolled ? "opacity-0 absolute" : "opacity-100")}
+        quality={100}
+        unoptimized
+        priority
+      />
+      
+      {/* Original Navy text logo for light backgrounds (scrolled navbar) */}
+      <Image
+        src="/trichova_logo_transparent.png"
+        alt="Trichova Logo Dark"
+        width={90}
+        height={33}
+        className={cn("object-contain transition-opacity duration-300", isScrolled ? "opacity-100" : "opacity-0 absolute")}
+        quality={100}
+        unoptimized
+        priority
       />
     </div>
   );

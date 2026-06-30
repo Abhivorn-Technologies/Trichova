@@ -15,9 +15,14 @@ const navLinks = [
     label: "Treatments", 
     href: "/treatments",
     dropdown: [
-      { label: "Results", href: "/results" }
+      { label: "BIO Integrated FUE", href: "/treatments/bio-integrated-fue" },
+      { label: "DHT Hair Transplant", href: "/treatments/dht-hair-transplant" },
+      { label: "FUE Hair Transplant", href: "/treatments/fue-hair-transplant" },
+      { label: "Female Hair Transplant", href: "/treatments/female-hair-transplant" },
+      { label: "Beard Transplant", href: "/treatments/beard-transplant" }
     ]
   },
+  { label: "Results", href: "/results" },
   { label: "Why Trichova", href: "/why-trichova" },
   { label: "FAQs", href: "/faqs" },
   { label: "Contact", href: "/contact" },
@@ -52,62 +57,64 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="flex items-center justify-center hover:opacity-90 transition-opacity"
+            className="flex items-center justify-center hover:opacity-90 transition-opacity -ml-4 lg:-ml-8"
           >
             <Logo isScrolled={isScrolled || pathname !== "/"} />
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/");
-              const isSolid = isScrolled || pathname !== "/";
-              return (
-                <div key={link.label} className="relative group">
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1",
-                      isSolid
-                        ? isActive
-                          ? "text-gold"
-                          : "text-navy-900 hover:text-gold"
-                        : isActive
-                        ? "text-white"
-                        : "text-white/80 hover:text-white",
-                      isActive ? "active" : ""
-                    )}
-                  >
-                    {link.label}
-                    {link.dropdown && <ChevronDown size={14} className="opacity-70 group-hover:rotate-180 transition-transform duration-300" />}
-                  </Link>
-                  
-                  {link.dropdown && (
-                    <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 group-hover:visible transition-all duration-300 z-50">
-                      <div className="bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-[240px] flex flex-col gap-1">
-                        {link.dropdown.map((subLink) => (
-                          <Link
-                            key={subLink.label}
-                            href={subLink.href}
-                            className="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-gold hover:bg-gold/5 transition-colors"
-                          >
-                            {subLink.label}
-                          </Link>
-                        ))}
+          {/* Right Side: Nav + CTA */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto">
+            {/* Desktop Nav */}
+            <div className="flex items-center gap-1">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/");
+                const isSolid = isScrolled || pathname !== "/";
+                return (
+                  <div key={link.label} className="relative group">
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1 whitespace-nowrap",
+                        isSolid
+                          ? isActive
+                            ? "text-gold"
+                            : "text-navy-900 hover:text-gold"
+                          : isActive
+                          ? "text-white"
+                          : "text-white/80 hover:text-white",
+                        isActive ? "active" : ""
+                      )}
+                    >
+                      {link.label}
+                      {link.dropdown && <ChevronDown size={14} className="opacity-70 group-hover:rotate-180 transition-transform duration-300" />}
+                    </Link>
+                    
+                    {link.dropdown && (
+                      <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 group-hover:visible transition-all duration-300 z-50">
+                        <div className="bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-[240px] flex flex-col gap-1">
+                          {link.dropdown.map((subLink) => (
+                            <Link
+                              key={subLink.label}
+                              href={subLink.href}
+                              className="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-gold hover:bg-gold/5 transition-colors whitespace-nowrap"
+                            >
+                              {subLink.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
 
-          {/* CTA */}
-          <div className="hidden lg:flex items-center gap-8">
+            {/* CTA */}
+            <div className="flex items-center gap-10 xl:gap-12 lg:ml-12">
             <a
               href="tel:+917093376414"
               className={cn(
-                "flex items-center gap-2 text-sm font-medium transition-colors duration-300",
+                "flex items-center gap-2 text-sm font-medium transition-colors duration-300 whitespace-nowrap",
                 (isScrolled || pathname !== "/") ? "text-navy-900 hover:text-gold" : "text-white/80 hover:text-white"
               )}
             >
@@ -116,10 +123,11 @@ export default function Navbar() {
             </a>
             <Link
               href="/book-consultation"
-              className="px-5 py-2.5 rounded-full text-sm font-semibold text-navy-950 bg-gradient-gold shadow-gold hover:shadow-gold-lg hover:scale-105 transition-all duration-300"
+              className="px-5 py-2.5 rounded-full text-sm font-semibold text-navy-950 bg-gradient-gold shadow-gold hover:shadow-gold-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
             >
               Book Consultation
             </Link>
+          </div>
           </div>
 
           {/* Mobile Menu Toggle */}

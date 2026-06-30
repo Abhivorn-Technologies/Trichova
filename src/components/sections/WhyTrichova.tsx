@@ -244,19 +244,16 @@ export default function WhyTrichova() {
             permanent, natural results we deliver — your investment in confidence, protected.
           </p>
           <a
+            id="why-trichova-cta"
             href="#book"
             onClick={(e) => {
               e.preventDefault();
               window.dispatchEvent(new Event("open-booking-modal"));
             }}
+            className="btn-gold"
           >
-            <button
-              id="why-trichova-cta"
-              className="btn-gold"
-            >
-              Start Your Journey
-              <CheckCircle2 size={16} />
-            </button>
+            Start Your Journey
+            <CheckCircle2 size={16} />
           </a>
         </motion.div>
       </div>

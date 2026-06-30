@@ -84,19 +84,17 @@ function BeforeAfterCard({
           <img
             src={result.splitImage}
             alt={`${result.name} - Before and After`}
-            className="absolute inset-0 w-full h-full object-cover"
+            className={`absolute inset-0 w-full h-full object-cover ${
+              result.id === 4
+                ? "object-[50%_60%]"
+                : result.id === 5
+                ? "object-[50%_45%]"
+                : result.id === 6
+                ? "object-[50%_30%]"
+                : "object-[50%_20%]"
+            }`}
           />
         )}
-        
-        {/* BEFORE Badge */}
-        <div className="absolute bottom-0 left-0 bg-navy-950 text-white text-[10px] font-bold px-4 py-1.5 rounded-tr-xl tracking-wider z-10">
-          BEFORE
-        </div>
-        
-        {/* AFTER Badge */}
-        <div className="absolute bottom-0 right-0 bg-[#FF6B35] text-white text-[10px] font-bold px-4 py-1.5 rounded-tl-xl tracking-wider z-10">
-          AFTER
-        </div>
       </div>
 
       {/* Info Footer */}

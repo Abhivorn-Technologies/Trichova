@@ -107,18 +107,30 @@ export default function Comparison() {
                   <span className="text-navy-900 text-sm font-medium">{feature}</span>
                 </div>
 
-                {/* Trichova — always check */}
+                {/* Trichova — check first 8, cross last 2 */}
                 <div className="col-span-1 py-4 flex justify-center relative">
                   <div className="absolute inset-0 bg-gold/5" />
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: false }}
-                    transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
-                    className="relative z-10 w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center"
-                  >
-                    <CheckCircle2 size={18} className="text-gold" />
-                  </motion.div>
+                  {i < 8 ? (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
+                      className="relative z-10 w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center"
+                    >
+                      <CheckCircle2 size={18} className="text-gold" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
+                      className="relative z-10 w-8 h-8 rounded-full bg-slate-100 border border-slate-200/60 flex items-center justify-center"
+                    >
+                      <XCircle size={18} className="text-slate-400" />
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Others — mostly cross */}
@@ -153,7 +165,7 @@ export default function Comparison() {
           <div className="grid grid-cols-3 gap-3 mt-3">
             <div className="col-span-1" />
             <div className="col-span-1 bg-gradient-to-br from-[#0E1A2B] to-[#162B4D] rounded-b-2xl p-5 text-center">
-              <div className="text-gold font-bold text-lg">10 / 10</div>
+              <div className="text-gold font-bold text-lg">8 / 10</div>
               <div className="text-ivory/60 text-xs">Features</div>
               <button
                 onClick={() => window.dispatchEvent(new Event("open-booking-modal"))}

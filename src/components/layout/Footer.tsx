@@ -13,7 +13,7 @@ import {
 const socialLinks = [
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/trichovahairstudio/",
     color: "hover:text-pink-400",
     svg: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -23,31 +23,11 @@ const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/trichovahairstudioo/",
     color: "hover:text-blue-400",
     svg: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
-    ),
-  },
-  {
-    label: "YouTube",
-    href: "#",
-    color: "hover:text-red-400",
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Twitter/X",
-    href: "#",
-    color: "hover:text-sky-400",
-    svg: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
       </svg>
     ),
   },
@@ -85,8 +65,8 @@ export default function Footer() {
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
           >
-            <div className="mb-8 relative scale-110 origin-left">
-              <Logo />
+            <div className="-mt-4 mb-2 relative scale-110 origin-left">
+              <Logo className="justify-start" />
             </div>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -265,9 +245,9 @@ export default function Footer() {
             </a>
           </p>
 
-          <div className="flex items-center gap-4 text-xs text-slate-500">
-            <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500">
+            <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link href="/refund-policy" className="hover:text-slate-300 transition-colors">Refund Policy</Link>
           </div>
         </div>
       </div>

@@ -41,8 +41,8 @@ const stats = [
 ];
 
 const heroImages = [
-  "/images/clinic-interior.jpg",
-  "/images/hero-confidence.jpg"
+  "/herosection-1.png",
+  "/herosection-2.png"
 ];
 
 export default function Hero() {
@@ -199,8 +199,8 @@ export default function Hero() {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <motion.div style={{ opacity }} className="relative z-20 section-container pt-28 pb-16">
-        <div className="max-w-3xl">
+      <motion.div style={{ opacity }} className="relative z-20 section-container w-full pt-28 pb-16">
+        <div className="max-w-3xl lg:ml-24 xl:ml-32">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -216,38 +216,71 @@ export default function Hero() {
 
           {/* Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            key={`h1-${currentImageIndex}`}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8 }}
             className="font-serif font-bold text-ivory leading-tight mb-6"
             style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.5rem)" }}
           >
-            Advanced Hair{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #C9A15A 0%, #D8B67A 50%, #C9A15A 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Restoration
-            </span>
-            <br />
-            Solutions
+            {currentImageIndex === 0 ? (
+              <>
+                Advanced Hair{" "}
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #C9A15A 0%, #D8B67A 50%, #C9A15A 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Restoration
+                </span>
+                <br />
+                Solutions
+              </>
+            ) : (
+              <>
+                {"REGAIN YOUR "}
+                <br />
+                {"HAIR."}
+                <br />
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #C9A15A 0%, #D8B67A 50%, #C9A15A 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  {"REGAIN YOUR"}
+                  <br />
+                  {"CONFIDENCE."}
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            key={`p-${currentImageIndex}`}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-ivory/80 text-lg md:text-xl max-w-xl mb-10 leading-relaxed font-light"
           >
-            World-class hair transplant treatments delivering natural, permanent results through{" "}
-            <span className="text-gold font-semibold">BIOFUE</span>,{" "}
-            <span className="text-gold font-semibold">DHT</span> and{" "}
-            <span className="text-gold font-semibold">Sapphire</span> technologies.
+            {currentImageIndex === 0 ? (
+              <>
+                World-class hair transplant treatments delivering natural, permanent results through{" "}
+                <span className="text-gold font-semibold">BIOFUE</span>,{" "}
+                <span className="text-gold font-semibold">DHT</span> and{" "}
+                <span className="text-gold font-semibold">Sapphire</span> technologies.
+              </>
+            ) : (
+              <>
+                Natural-looking hair restoration for a younger, confident you.
+              </>
+            )}
           </motion.p>
 
           {/* CTAs */}
