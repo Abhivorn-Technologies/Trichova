@@ -95,6 +95,14 @@ function BeforeAfterCard({
             }`}
           />
         )}
+        
+        {/* Before & After Labels */}
+        <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md shadow-sm">
+          Before
+        </div>
+        <div className="absolute bottom-3 right-3 bg-gold/90 backdrop-blur-md text-navy-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md shadow-sm">
+          After
+        </div>
       </div>
 
       {/* Info Footer */}
