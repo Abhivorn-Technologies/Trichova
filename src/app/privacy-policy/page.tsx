@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
         description="Our commitment to protecting your privacy and personal information."
         imageSrc="/images/clinic-interior.jpg"
       />
-      <div className="section-container py-20">
+      <div className="section-container py-10 md:py-20">
         <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gold/10">
           <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
             <p>

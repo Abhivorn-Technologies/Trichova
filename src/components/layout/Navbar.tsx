@@ -11,11 +11,11 @@ import Logo from "@/components/ui/Logo";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { 
-    label: "Treatments", 
+  {
+    label: "Treatments",
     href: "/treatments",
     dropdown: [
-      { label: "BIO Integrated FUE", href: "/treatments/bio-integrated-fue" },
+      { label: "BIO Integrated FUE", href: "/treatments/bio-fue" },
       { label: "DHT Hair Transplant", href: "/treatments/dht-hair-transplant" },
       { label: "FUE Hair Transplant", href: "/treatments/fue-hair-transplant" },
       { label: "Female Hair Transplant", href: "/treatments/female-hair-transplant" },
@@ -80,15 +80,15 @@ export default function Navbar() {
                             ? "text-gold"
                             : "text-navy-900 hover:text-gold"
                           : isActive
-                          ? "text-white"
-                          : "text-white/80 hover:text-white",
+                            ? "text-white"
+                            : "text-white/80 hover:text-white",
                         isActive ? "active" : ""
                       )}
                     >
                       {link.label}
                       {link.dropdown && <ChevronDown size={14} className="opacity-70 group-hover:rotate-180 transition-transform duration-300" />}
                     </Link>
-                    
+
                     {link.dropdown && (
                       <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 group-hover:visible transition-all duration-300 z-50">
                         <div className="bg-white rounded-xl shadow-xl border border-slate-100 p-2 min-w-[240px] flex flex-col gap-1">
@@ -111,23 +111,23 @@ export default function Navbar() {
 
             {/* CTA */}
             <div className="flex items-center gap-10 xl:gap-12 lg:ml-12">
-            <a
-              href="tel:+917093376414"
-              className={cn(
-                "flex items-center gap-2 text-sm font-medium transition-colors duration-300 whitespace-nowrap",
-                (isScrolled || pathname !== "/") ? "text-navy-900 hover:text-gold" : "text-white/80 hover:text-white"
-              )}
-            >
-              <Phone size={15} />
-              +91 70933 76414
-            </a>
-            <Link
-              href="/book-consultation"
-              className="px-5 py-2.5 rounded-full text-sm font-semibold text-navy-950 bg-gradient-gold shadow-gold hover:shadow-gold-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-            >
-              Book Consultation
-            </Link>
-          </div>
+              <a
+                href="tel:+917093376414"
+                className={cn(
+                  "flex items-center gap-2 text-sm font-medium transition-colors duration-300 whitespace-nowrap",
+                  (isScrolled || pathname !== "/") ? "text-navy-900 hover:text-gold" : "text-white/80 hover:text-white"
+                )}
+              >
+                <Phone size={15} />
+                +91 70933 76414
+              </a>
+              <Link
+                href="/book-consultation"
+                className="px-5 py-2.5 rounded-full text-sm font-semibold text-navy-950 bg-gradient-gold shadow-gold hover:shadow-gold-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
+              >
+                Book Consultation
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Toggle */}

@@ -14,7 +14,7 @@ export default function BioFUEPage() {
         description="The perfect synergy of surgical precision and regenerative medicine. By integrating bioactive growth factors during the FUE procedure, we maximize graft survival and significantly accelerate your healing process."
         imageSrc="/images/hero-confidence.jpg"
       />
-      <div className="section-container py-20 bg-ivory">
+      <div className="section-container py-10 md:py-20 bg-ivory">
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-section text-center mb-10">How BIOFUE Works</h2>
           <div className="grid md:grid-cols-2 gap-10">

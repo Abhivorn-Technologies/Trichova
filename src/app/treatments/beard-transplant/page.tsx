@@ -14,7 +14,7 @@ export default function BeardTransplantPage() {
         description="Mastering the art of facial hair restoration. We meticulously design and implant each follicle to match the natural angle and density of a perfect beard, completely undetectable as a transplant."
         imageSrc="/images/hero-confidence.jpg"
       />
-      <div className="section-container py-20 bg-ivory">
+      <div className="section-container py-10 md:py-20 bg-ivory">
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-section text-center mb-10">The Art of Facial Hair Design</h2>
           <div className="space-y-8 text-slate-600 leading-relaxed text-lg">

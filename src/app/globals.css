@@ -19,7 +19,13 @@
   --color-bg: #F7F3ED;
   --color-bg-soft: #E7DDD1;
   --color-bg-blue: #F7F3ED;
-  --navbar-height: 100px;
+  --navbar-height: 80px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --navbar-height: 100px;
+  }
 }
 
 /* ============================================
@@ -43,7 +49,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 /* ============================================
@@ -86,7 +91,7 @@ body {
   }
 
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-10 md:py-20 lg:py-28;
   }
 
   /* Typography */

@@ -199,7 +199,7 @@ export default function Hero() {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <motion.div style={{ opacity }} className="relative z-20 section-container w-full pt-28 pb-16">
+      <motion.div style={{ opacity }} className="relative z-20 section-container w-full pt-28 md:pt-32 pb-16">
         <div className="max-w-3xl lg:ml-24 xl:ml-32">
           {/* Badge */}
           <motion.div
@@ -208,9 +208,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex mb-8"
           >
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-ivory/10 backdrop-blur-sm border border-gold/30 text-ivory/90 text-sm font-medium">
-              <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              India&apos;s Most Advanced Hair Restoration Studio
+            <div className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2 rounded-full bg-ivory/10 backdrop-blur-sm border border-gold/30 text-ivory/90 text-[11px] md:text-sm font-medium">
+              <div className="w-2 h-2 rounded-full bg-gold animate-pulse shrink-0" />
+              <span>India&apos;s Most Advanced Hair Restoration Studio</span>
             </div>
           </motion.div>
 

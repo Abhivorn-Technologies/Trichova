@@ -14,7 +14,7 @@ export default function FemaleTransplantPage() {
         description="Hair loss in women requires a specialized, delicate approach. We offer advanced, no-shave DHT and regenerative treatments specifically designed to restore density and volume naturally."
         imageSrc="/images/clinic-interior.jpg"
       />
-      <div className="section-container py-20">
+      <div className="section-container py-10 md:py-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-section text-center mb-10">Our Approach to Female Hair Restoration</h2>
           <div className="space-y-8 text-slate-600 leading-relaxed text-lg">
