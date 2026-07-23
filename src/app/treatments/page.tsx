@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import Services from "@/components/sections/Services";
 import Comparison from "@/components/sections/Comparison";
 
@@ -11,12 +10,7 @@ export const metadata: Metadata = {
 export default function TreatmentsPage() {
   return (
     <main>
-      <PageHero 
-        title="Our Treatments" 
-        description="Comprehensive hair restoration solutions customized to your unique needs, utilizing the most advanced surgical and non-surgical technologies available globally."
-        imageSrc="/images/hero-confidence.jpg"
-      />
-      <Services />
+            <Services />
       <Comparison />
     </main>
   );

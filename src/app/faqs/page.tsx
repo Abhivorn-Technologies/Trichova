@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import FAQ from "@/components/sections/FAQ";
 
 export const metadata: Metadata = {
@@ -10,12 +9,7 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <main>
-      <PageHero 
-        title="Frequently Asked Questions" 
-        description="We believe in total transparency. Find answers to the most common questions about our procedures, recovery process, and long-term results."
-        imageSrc="/images/clinic-interior.jpg"
-      />
-      <div className="py-10">
+            <div className="pt-12 md:pt-14 pb-10 bg-ivory min-h-screen w-full">
         <FAQ />
       </div>
     </main>

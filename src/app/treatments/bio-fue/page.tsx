@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "BIOFUE Hair Transplant in Hyderabad | Trichova",
@@ -18,12 +17,7 @@ export const metadata: Metadata = {
 export default function BioFUEPage() {
   return (
     <main>
-      <PageHero 
-        title="BIO Integrated FUE" 
-        description="The perfect synergy of surgical precision and regenerative medicine. By integrating bioactive growth factors during the FUE procedure, we maximize graft survival and significantly accelerate your healing process."
-        imageSrc="/images/hero-confidence.jpg"
-      />
-
+      
       <div className="section-container py-10 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-left">

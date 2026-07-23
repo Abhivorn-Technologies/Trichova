@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import ConsultationCTA from "@/components/sections/ConsultationCTA";
 
 export const metadata: Metadata = {
@@ -10,12 +9,7 @@ export const metadata: Metadata = {
 export default function BookConsultationPage() {
   return (
     <main>
-      <PageHero 
-        title="Book Your Consultation" 
-        description="Take the first step toward restoring your hair and confidence. Schedule a complimentary, in-depth hair analysis with our senior transplant specialists."
-        imageSrc="/images/hero-confidence.jpg"
-      />
-      <ConsultationCTA />
+            <ConsultationCTA />
     </main>
   );
 }

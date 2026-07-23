@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import ClinicSection from "@/components/sections/ClinicSection";
 import Journey from "@/components/sections/Journey";
 import Doctors from "@/components/sections/Doctors";
@@ -11,12 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
-      <PageHero 
-        title="About Trichova" 
-        description="Pioneering the future of hair restoration with world-class medical expertise, advanced technology, and a commitment to luxury patient care."
-        imageSrc="/images/clinic-interior.jpg"
-      />
+    <main className="pt-12 md:pt-14 bg-ivory min-h-screen">
       <ClinicSection />
       <Doctors />
       <Journey />

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import Results from "@/components/sections/Results";
 
 export const metadata: Metadata = {
@@ -9,12 +8,7 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <main>
-      <PageHero 
-        title="Transformations" 
-        description="Every image here represents a life changed and confidence restored. Browse our gallery of real patient results, showcasing the density and natural hairlines we achieve at Trichova."
-        imageSrc="/images/clinic-interior.jpg"
-      />
+    <main className="pt-12 md:pt-14 bg-ivory min-h-screen">
       <Results />
     </main>
   );

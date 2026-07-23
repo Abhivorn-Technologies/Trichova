@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -10,13 +9,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <PageHero 
-        title="Contact Us" 
-        description="We are here to help you on your hair restoration journey. Reach out to our patient care team for inquiries, or book a complimentary consultation."
-        imageSrc="/images/hero-confidence.jpg"
-      />
-      <div className="section-container py-8 lg:py-12 bg-ivory">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+      <div className="w-full bg-ivory min-h-screen">
+        <div className="section-container pt-32 pb-16 lg:pt-36 lg:pb-24">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Details */}
           <div>
             <h2 className="heading-section mb-4 text-3xl md:text-4xl">Get In Touch</h2>
@@ -85,6 +80,7 @@ export default function ContactPage() {
                 Send Message
               </button>
             </form>
+          </div>
           </div>
         </div>
       </div>

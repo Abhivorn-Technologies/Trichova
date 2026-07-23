@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import DHTFeature from "@/components/sections/DHTFeature";
 
 export const metadata: Metadata = {
@@ -19,12 +18,7 @@ export const metadata: Metadata = {
 export default function DHTPage() {
   return (
     <main>
-      <PageHero 
-        title="DHT Hair Transplant" 
-        description="The ultimate precision in hair restoration. Direct Hair Implantation offers maximum density, total angle control, and the option to restore your hair without shaving your head."
-        imageSrc="/images/hero-confidence.jpg"
-      />
-
+      
       <div className="section-container py-10 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-left">

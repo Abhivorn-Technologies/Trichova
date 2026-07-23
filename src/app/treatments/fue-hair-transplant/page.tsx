@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 import Technology from "@/components/sections/Technology";
 
 export const metadata: Metadata = {
@@ -18,13 +17,9 @@ export const metadata: Metadata = {
 export default function FUEPage() {
   return (
     <main>
-      <PageHero 
-        title="Sapphire FUE Transplant" 
-        description="Experience the gold standard in hair extraction. Our Sapphire FUE technique ensures minimal tissue trauma, accelerated healing, and undetectable, natural results."
-        imageSrc="/images/clinic-interior.jpg"
-      />
-
-      <div className="section-container py-10 md:py-16 bg-white">
+      
+      <div className="w-full bg-white">
+        <div className="section-container py-16 md:py-20">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-left">
             <span className="badge-gold">Modern Procedure</span>
@@ -72,6 +67,7 @@ export default function FUEPage() {
               combines clinical expertise, personalized care, and meticulous treatment planning to help 
               you achieve results that look natural today and continue to look natural in the years to come.
             </p>
+          </div>
           </div>
         </div>
       </div>

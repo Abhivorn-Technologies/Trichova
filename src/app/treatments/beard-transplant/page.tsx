@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Beard Transplant in Hyderabad | Trichova",
@@ -17,12 +16,7 @@ export const metadata: Metadata = {
 export default function BeardTransplantPage() {
   return (
     <main>
-      <PageHero 
-        title="Beard & Moustache Transplant" 
-        description="Mastering the art of facial hair restoration. We meticulously design and implant each follicle to match the natural angle and density of a perfect beard, completely undetectable as a transplant."
-        imageSrc="/images/hero-confidence.jpg"
-      />
-      
+            
       <div className="section-container py-10 md:py-20 bg-ivory">
         <div className="max-w-4xl mx-auto">
           <div className="text-left mb-8">
