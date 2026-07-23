@@ -56,6 +56,7 @@ const quickLinks = [
   { label: "Treatments", href: "/treatments" },
   { label: "Why Trichova", href: "/why-trichova" },
   { label: "Results Gallery", href: "/results" },
+  { label: "Blogs & Insights", href: "/blogs" },
   { label: "FAQs", href: "/faqs" },
   { label: "Book Consultation", href: "/book-consultation" },
 ];

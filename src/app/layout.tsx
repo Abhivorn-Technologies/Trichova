@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import BookingModal from "@/components/BookingModal";
+import ConditionalLayoutWrapper from "@/components/layout/ConditionalLayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Trichova Hair Studio | Advanced Hair Transplant & Restoration",
@@ -70,15 +68,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased">
-        <div className="flex flex-col min-h-screen overflow-x-hidden w-full relative">
-          <Navbar />
-          <main className="flex-1 w-full">
-            {children}
-          </main>
-          <Footer />
-          <BookingModal />
-        </div>
+      <body className="font-sans antialiased bg-slate-950 text-slate-100">
+        <ConditionalLayoutWrapper>{children}</ConditionalLayoutWrapper>
       </body>
     </html>
   );

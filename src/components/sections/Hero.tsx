@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Play, Star, Shield, Award, Zap, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
@@ -76,27 +76,36 @@ export default function Hero() {
     >
       {/* ── BACKGROUND LAYERS ── */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 bg-navy-950">
-        {/* Real hero image carousel */}
-        <div className="absolute inset-0">
-          <AnimatePresence>
-            <motion.div
-              key={currentImageIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={heroImages[currentImageIndex]}
-                alt="Trichova Hair Studio — advanced hair restoration"
-                fill
-                priority={currentImageIndex === 0}
-                className="object-cover object-center"
-                style={{ objectPosition: "center 30%" }}
-              />
-            </motion.div>
-          </AnimatePresence>
+        {/* Real hero image carousel — ultra smooth crossfade */}
+        <div className="absolute inset-0 overflow-hidden">
+          {heroImages.map((src, index) => {
+            const isActive = index === currentImageIndex;
+            return (
+              <motion.div
+                key={src}
+                initial={false}
+                animate={{
+                  opacity: isActive ? 1 : 0,
+                  scale: isActive ? 1.05 : 1,
+                }}
+                transition={{
+                  opacity: { duration: 1.8, ease: [0.4, 0, 0.2, 1] },
+                  scale: { duration: 6, ease: "linear" },
+                }}
+                className="absolute inset-0 pointer-events-none"
+                style={{ zIndex: isActive ? 1 : 0 }}
+              >
+                <Image
+                  src={src}
+                  alt="Trichova Hair Studio — advanced hair restoration"
+                  fill
+                  priority
+                  className="object-cover object-center"
+                  style={{ objectPosition: "center 30%" }}
+                />
+              </motion.div>
+            );
+          })}
           {/* Deep luxury navy gradient overlay: strong on left, fades on right */}
           <div
             className="absolute inset-0 z-10 pointer-events-none"
@@ -199,7 +208,7 @@ export default function Hero() {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <motion.div style={{ opacity }} className="relative z-20 section-container w-full pt-28 md:pt-32 pb-16">
+      <motion.div style={{ opacity }} className="relative z-20 section-container w-full pt-28 md:pt-32 pb-24 md:pb-28">
         <div className="max-w-3xl lg:ml-24 xl:ml-32">
           {/* Badge */}
           <motion.div
@@ -349,15 +358,21 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
         onClick={scrollToServices}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-ivory/40 hover:text-ivory/80 transition-colors duration-300"
+        className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-30 group flex flex-col items-center gap-1 text-gold hover:text-gold-light transition-all duration-300 cursor-pointer bg-transparent border-0 p-0"
+        aria-label="Scroll to services section"
       >
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-gold">Explore</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-          <ChevronDown size={20} className="text-gold" />
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold group-hover:tracking-[0.25em] transition-all duration-300">
+          Explore
+        </span>
+        <motion.div
+          animate={{ y: [0, 5, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown size={18} className="text-gold group-hover:scale-110 transition-transform" />
         </motion.div>
       </motion.button>
     </section>
