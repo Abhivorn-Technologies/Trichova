@@ -16,7 +16,7 @@ export async function loginAdmin(formData: { username?: string; password?: strin
     if (!ADMIN_USERNAME || !ADMIN_PASSWORD) {
       return {
         success: false,
-        error: "Admin credentials missing in server environment variables.",
+        error: "Invalid admin email or password.",
       };
     }
 
