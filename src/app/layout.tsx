@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import ConditionalLayoutWrapper from "@/components/layout/ConditionalLayoutWrapper";
 
@@ -69,6 +70,18 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-slate-950 text-slate-100">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-H79FX4SS38"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H79FX4SS38');
+          `}
+        </Script>
         <ConditionalLayoutWrapper>{children}</ConditionalLayoutWrapper>
       </body>
     </html>
