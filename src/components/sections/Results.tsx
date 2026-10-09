@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ZoomIn } from "lucide-react";
+import { ZoomIn, X } from "lucide-react";
 import Image from "next/image";
 
 const categories = ["All", "Male", "Crown", "Hairline", "Advanced Cases"];
@@ -10,71 +10,69 @@ const categories = ["All", "Male", "Crown", "Hairline", "Advanced Cases"];
 const results = [
   {
     id: 1,
-    category: "Crown",
-    name: "Anil Kumar",
-    technique: "SAPPHIRE",
-    grade: "GRADE 4",
-    beforeDesc: "Crown vertex thinning and hairline loss",
-    afterDesc: "Natural dense follicular coverage",
-    splitImage: "/images/before-after/split_card_4.jpg",
+    categories: ["Crown", "Hairline"],
+    name: "Natural Hair Growth",
+    technique: "BIO-FUE",
+    grade: "ADVANCED",
+    image: "/images/trichova-1.jpg",
   },
   {
     id: 2,
-    category: "Advanced Cases",
-    name: "Suresh Reddy",
+    categories: ["Advanced Cases", "Crown"],
+    name: "4500 Grafts Restoration",
     technique: "BIOFUE",
-    grade: "GRADE 7",
-    beforeDesc: "Complete crown and mid-scalp baldness",
-    afterDesc: "Remarkable density restoration across crown",
-    splitImage: "/images/before-after/split_card_5.jpg",
+    grade: "4500 GRAFTS",
+    image: "/images/trichova-2.jpg",
   },
   {
     id: 3,
-    category: "Hairline",
-    name: "Vikram Singh",
+    categories: ["Hairline", "Crown"],
+    name: "3000 Grafts Restoration",
     technique: "SAPPHIRE",
-    grade: "GRADE 3",
-    beforeDesc: "Receded hairline and thinning frontal core",
-    afterDesc: "Naturally lowered dense hairline and crown",
-    splitImage: "/images/before-after/split_card_6.jpg",
+    grade: "3000 GRAFTS",
+    image: "/images/trichova-3.jpg",
   },
 ];
 
-// Static Before-After card component matching new design
+// Patient transformation card component
 function BeforeAfterCard({
   result,
+  onZoom,
 }: {
   result: (typeof results)[0];
+  onZoom: () => void;
 }) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
-      {/* Image comparison area */}
-      <div className="relative h-60 w-full overflow-hidden bg-slate-100">
-        {result.splitImage && (
-          <img
-            src={result.splitImage}
-            alt={`${result.name} - Before and After`}
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-        )}
-        
-        {/* Before & After Labels */}
-        <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md shadow-sm">
-          Before
-        </div>
-        <div className="absolute bottom-3 right-3 bg-gold/90 backdrop-blur-md text-navy-950 text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md shadow-sm">
-          After
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-lg transition-all duration-300 flex flex-col group">
+      {/* Image comparison showcase area */}
+      <div 
+        className="relative w-full aspect-[1080/1240] overflow-hidden bg-slate-50 cursor-pointer"
+        onClick={onZoom}
+      >
+        <img
+          src={result.image}
+          alt={result.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          loading="lazy"
+        />
+
+        {/* Hover zoom overlay indicator */}
+        <div className="absolute inset-0 bg-navy-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="p-3 rounded-full bg-white/95 text-navy-950 shadow-md backdrop-blur-sm transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-1.5 text-xs font-semibold px-4 py-2">
+            <ZoomIn className="w-4 h-4 text-gold" />
+            <span>Click to View</span>
+          </div>
         </div>
       </div>
 
       {/* Info Footer */}
-      <div className="p-4 flex items-center justify-between bg-white">
-        <h3 className="font-medium text-slate-700 text-sm">{result.name}</h3>
+      <div className="p-4 flex items-center justify-between bg-white border-t border-slate-50">
+        <h3 className="font-semibold text-slate-800 text-sm">{result.name}</h3>
         <div className="flex items-center gap-2">
           <span className="px-2.5 py-1 rounded-full bg-orange-50 text-[#FF6B35] text-[9px] font-bold uppercase tracking-wider">
             {result.technique}
           </span>
-          <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-500 text-[9px] font-bold uppercase tracking-wider">
+          <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 text-[9px] font-bold uppercase tracking-wider">
             {result.grade}
           </span>
         </div>
@@ -88,7 +86,10 @@ export default function Results() {
   const [zoomed, setZoomed] = useState<null | number>(null);
 
   const filtered = results.filter(
-    (r) => activeCategory === "All" || activeCategory === "Male" || r.category === activeCategory
+    (r) =>
+      activeCategory === "All" ||
+      activeCategory === "Male" ||
+      r.categories.includes(activeCategory)
   );
 
   return (
@@ -157,7 +158,7 @@ export default function Results() {
         {/* Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filtered.map((result, i) => (
@@ -169,7 +170,10 @@ export default function Results() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
               >
-                <BeforeAfterCard result={result} />
+                <BeforeAfterCard
+                  result={result}
+                  onZoom={() => setZoomed(result.id)}
+                />
               </motion.div>
             ))}
           </AnimatePresence>
@@ -194,6 +198,56 @@ export default function Results() {
           </button>
         </motion.div>
       </div>
+
+      {/* High-Resolution Zoom Modal */}
+      <AnimatePresence>
+        {zoomed !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+            onClick={() => setZoomed(null)}
+          >
+            <div
+              className="relative max-w-3xl max-h-[92vh] bg-navy-950 rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-gold/20"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setZoomed(null)}
+                className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-black/90 transition-colors border border-white/20"
+                aria-label="Close modal"
+              >
+                <X size={18} />
+              </button>
+              {(() => {
+                const active = results.find((r) => r.id === zoomed);
+                if (!active) return null;
+                return (
+                  <div className="overflow-auto max-h-[92vh] flex flex-col items-center p-2 bg-navy-950">
+                    <img
+                      src={active.image}
+                      alt={active.name}
+                      className="max-h-[82vh] w-auto object-contain rounded-xl"
+                    />
+                    <div className="w-full px-4 py-3 flex items-center justify-between text-white border-t border-white/10 mt-2">
+                      <span className="font-medium text-sm text-ivory">{active.name}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="px-2.5 py-0.5 rounded-full bg-orange-500/20 text-[#FF6B35] text-xs font-semibold">
+                          {active.technique}
+                        </span>
+                        <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-semibold">
+                          {active.grade}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
