@@ -5,68 +5,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ZoomIn } from "lucide-react";
 import Image from "next/image";
 
-const categories = ["All", "Male", "Female", "Beard", "Advanced Cases"];
+const categories = ["All", "Male", "Crown", "Hairline", "Advanced Cases"];
 
 const results = [
   {
     id: 1,
-    category: "Male",
-    name: "Satya Ottur",
-    technique: "UHDHT",
-    grade: "GRADE 6",
-    beforeDesc: "Significant frontal recession",
-    afterDesc: "Full frontal hairline restored",
-    splitImage: "/images/split_1.png",
+    category: "Crown",
+    name: "Anil Kumar",
+    technique: "SAPPHIRE",
+    grade: "GRADE 4",
+    beforeDesc: "Crown vertex thinning and hairline loss",
+    afterDesc: "Natural dense follicular coverage",
+    splitImage: "/images/before-after/split_card_4.jpg",
   },
   {
     id: 2,
-    category: "Male",
-    name: "Rusmik Oza",
-    technique: "UHDHT",
-    grade: "GRADE 7",
-    beforeDesc: "Extensive crown thinning",
-    afterDesc: "Dense crown coverage",
-    splitImage: "/images/split_2.png",
-  },
-  {
-    id: 3,
-    category: "Female",
-    name: "Priya Sharma",
-    technique: "DHT",
-    grade: "DIFFUSE",
-    beforeDesc: "Significant density loss",
-    afterDesc: "Full density restored",
-    splitImage: "/images/split_3.png",
-  },
-  {
-    id: 4,
-    category: "Beard",
-    name: "Anil Kumar",
-    technique: "Sapphire",
-    grade: "PATCHY",
-    beforeDesc: "Patchy beard growth",
-    afterDesc: "Full uniform beard",
-    splitImage: "/images/split_4.png",
-  },
-  {
-    id: 5,
     category: "Advanced Cases",
     name: "Suresh Reddy",
     technique: "BIOFUE",
     grade: "GRADE 7",
     beforeDesc: "Complete crown and mid-scalp baldness",
-    afterDesc: "Remarkable density restoration",
-    splitImage: "/images/split_5.png",
+    afterDesc: "Remarkable density restoration across crown",
+    splitImage: "/images/before-after/split_card_5.jpg",
   },
   {
-    id: 6,
-    category: "Male",
+    id: 3,
+    category: "Hairline",
     name: "Vikram Singh",
-    technique: "Sapphire",
+    technique: "SAPPHIRE",
     grade: "GRADE 3",
-    beforeDesc: "High receded hairline",
-    afterDesc: "Naturally lowered dense hairline",
-    splitImage: "/images/split_6.png",
+    beforeDesc: "Receded hairline and thinning frontal core",
+    afterDesc: "Naturally lowered dense hairline and crown",
+    splitImage: "/images/before-after/split_card_6.jpg",
   },
 ];
 
@@ -79,20 +49,12 @@ function BeforeAfterCard({
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300">
       {/* Image comparison area */}
-      <div className="relative h-60 w-full overflow-hidden">
+      <div className="relative h-60 w-full overflow-hidden bg-slate-100">
         {result.splitImage && (
           <img
             src={result.splitImage}
             alt={`${result.name} - Before and After`}
-            className={`absolute inset-0 w-full h-full object-cover ${
-              result.id === 4
-                ? "object-[50%_60%]"
-                : result.id === 5
-                ? "object-[50%_45%]"
-                : result.id === 6
-                ? "object-[50%_30%]"
-                : "object-[50%_20%]"
-            }`}
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
         )}
         
@@ -126,7 +88,7 @@ export default function Results() {
   const [zoomed, setZoomed] = useState<null | number>(null);
 
   const filtered = results.filter(
-    (r) => activeCategory === "All" || r.category === activeCategory
+    (r) => activeCategory === "All" || activeCategory === "Male" || r.category === activeCategory
   );
 
   return (
@@ -159,7 +121,7 @@ export default function Results() {
             transition={{ delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto"
           >
-            Real results from real patients. Drag the slider on each card to compare before and after.
+            Real results from real patients. Verified before and after hair restoration transformations.
           </motion.p>
           <motion.div
             initial={{ scaleX: 0 }}
