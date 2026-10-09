@@ -32,6 +32,14 @@ const results = [
     grade: "3000 GRAFTS",
     image: "/images/trichova-3.jpg",
   },
+  {
+    id: 4,
+    categories: ["Advanced Cases", "Crown"],
+    name: "5500 Grafts Restoration",
+    technique: "BIO-FUE",
+    grade: "5500 GRAFTS",
+    image: "/images/trichova-4.jpg",
+  },
 ];
 
 // Patient transformation card component
@@ -143,6 +151,8 @@ export default function Results() {
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
+              suppressHydrationWarning
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeCategory === cat
@@ -158,7 +168,7 @@ export default function Results() {
         {/* Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="popLayout">
             {filtered.map((result, i) => (
@@ -190,6 +200,8 @@ export default function Results() {
             Ready to write your own transformation story?
           </p>
           <button
+            type="button"
+            suppressHydrationWarning
             onClick={() => window.dispatchEvent(new Event("open-booking-modal"))}
             className="btn-gold"
             id="results-cta"

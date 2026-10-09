@@ -81,7 +81,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased bg-slate-950 text-slate-100">
+      <body className="font-sans antialiased bg-slate-950 text-slate-100" suppressHydrationWarning>
         <ConditionalLayoutWrapper>{children}</ConditionalLayoutWrapper>
       </body>
     </html>
