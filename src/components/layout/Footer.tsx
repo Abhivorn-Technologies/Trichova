@@ -232,6 +232,7 @@ export default function Footer() {
             {/* CTA */}
             <button
               onClick={() => window.dispatchEvent(new Event("open-booking-modal"))}
+              suppressHydrationWarning
               className="mt-6 w-full py-3 rounded-full text-sm font-semibold text-navy-950 bg-gradient-gold shadow-gold transition-all duration-300 hover:scale-105"
             >
               Book Free Consultation

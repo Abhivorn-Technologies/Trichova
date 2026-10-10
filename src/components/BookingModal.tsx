@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2 } from "lucide-react";
+import { sendEnquiryEmail } from "@/lib/emailjs";
+import { submitEnquiry } from "@/lib/actions/enquiry";
 
 const concerns = [
   "Receding Hairline",
@@ -79,14 +81,29 @@ export default function BookingModal() {
     };
   }, [isOpen, submitted]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
+
+    const payload = {
+      ...formData,
+      source: "Booking Modal Popup",
+    };
+
+    try {
+      // 1. Save to MongoDB
+      await submitEnquiry(payload);
+
+      // 2. Send email via EmailJS
+      await sendEnquiryEmail(payload);
+
       setSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const close = () => setIsOpen(false);
@@ -145,7 +162,7 @@ export default function BookingModal() {
                     <h3 className="font-bold text-white text-2xl mb-2">Book Free Consultation</h3>
                     <p className="text-white/60 mb-6 text-sm">Fill out the form below and we will contact you shortly.</p>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} suppressHydrationWarning className="space-y-4">
                       {/* Name */}
                       <div>
                         <label className="block text-white/60 text-sm mb-1.5 font-medium">Full Name *</label>

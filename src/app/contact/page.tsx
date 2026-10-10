@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+import ContactForm from "@/components/contact/ContactForm";
+
 export const metadata: Metadata = {
   title: "Contact Us | Trichova Hair Studio",
   description: "Get in touch with Trichova Hair Studio. Call, email, or visit our luxury clinic in Jubilee Hills, Hyderabad.",
@@ -59,28 +61,7 @@ export default function ContactPage() {
           </div>
           
           {/* Form Side */}
-          <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-xl border border-gold/20 flex flex-col justify-center">
-            <h3 className="text-xl font-bold text-navy-900 mb-2">Send us a message</h3>
-            <p className="text-slate-500 text-sm mb-6">Fill out the form below and our team will get back to you shortly.</p>
-            
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-navy-900 mb-1">Full Name</label>
-                <input type="text" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all text-sm" placeholder="John Doe" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-navy-900 mb-1">Phone Number</label>
-                <input type="tel" className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all text-sm" placeholder="+91 XXXXX XXXXX" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-navy-900 mb-1">Message</label>
-                <textarea rows={3} className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all text-sm resize-none" placeholder="How can we help you?"></textarea>
-              </div>
-              <button type="submit" className="w-full py-3.5 mt-2 rounded-xl font-bold text-navy-950 bg-gradient-gold shadow-gold hover:shadow-gold-lg hover:scale-[1.02] transition-all duration-300">
-                Send Message
-              </button>
-            </form>
-          </div>
+          <ContactForm />
           </div>
         </div>
       </div>

@@ -4,6 +4,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Send, CheckCircle2, ArrowRight } from "lucide-react";
 
+import { sendEnquiryEmail } from "@/lib/emailjs";
+import { submitEnquiry } from "@/lib/actions/enquiry";
+
 const concerns = [
   "Receding Hairline",
   "Crown Thinning",
@@ -27,14 +30,29 @@ export default function ConsultationCTA() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
+
+    const payload = {
+      ...formData,
+      source: "Consultation CTA",
+    };
+
+    try {
+      // 1. Save enquiry in database
+      await submitEnquiry(payload);
+
+      // 2. Send email via EmailJS
+      await sendEnquiryEmail(payload);
+
       setSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -126,6 +144,7 @@ export default function ConsultationCTA() {
                 onSubmit={handleSubmit}
                 className="glass rounded-3xl p-8"
                 id="consultation-form"
+                suppressHydrationWarning
               >
                 <h3 className="font-bold text-white text-xl mb-6">Book Your Free Consultation</h3>
 
@@ -142,6 +161,7 @@ export default function ConsultationCTA() {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your full name"
                       required
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:bg-white/10 transition-all duration-200 text-sm"
                     />
                   </div>
@@ -158,6 +178,7 @@ export default function ConsultationCTA() {
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
                       required
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:bg-white/10 transition-all duration-200 text-sm"
                     />
                   </div>
@@ -173,6 +194,7 @@ export default function ConsultationCTA() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your@email.com"
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:bg-white/10 transition-all duration-200 text-sm"
                     />
                   </div>
@@ -187,6 +209,7 @@ export default function ConsultationCTA() {
                       value={formData.concern}
                       onChange={(e) => setFormData({ ...formData, concern: e.target.value })}
                       required
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-white/10 text-white focus:outline-none focus:border-gold/50 transition-all duration-200 text-sm appearance-none"
                     >
                       <option value="" className="text-slate-400">Select your concern</option>
@@ -209,6 +232,7 @@ export default function ConsultationCTA() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your hair loss timeline, previous treatments, etc."
                       rows={3}
+                      suppressHydrationWarning
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-gold/50 focus:bg-white/10 transition-all duration-200 text-sm resize-none"
                     />
                   </div>
@@ -218,6 +242,7 @@ export default function ConsultationCTA() {
                     type="submit"
                     id="form-submit"
                     disabled={loading}
+                    suppressHydrationWarning
                     className="w-full py-4 rounded-xl font-bold text-navy-950 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.02] disabled:opacity-70 disabled:scale-100 bg-gradient-gold shadow-gold"
                   >
                     {loading ? (
