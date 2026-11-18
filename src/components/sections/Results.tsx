@@ -57,11 +57,12 @@ function BeforeAfterCard({
         className="relative w-full aspect-[1080/1240] overflow-hidden bg-slate-50 cursor-pointer"
         onClick={onZoom}
       >
-        <img
+        <Image
           src={result.image}
           alt={result.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-          loading="lazy"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         />
 
         {/* Hover zoom overlay indicator */}
@@ -108,7 +109,7 @@ export default function Results() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="badge-gold">Real Results</span>
@@ -116,7 +117,7 @@ export default function Results() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="heading-section mb-4"
           >
@@ -126,7 +127,7 @@ export default function Results() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto"
           >
@@ -135,7 +136,7 @@ export default function Results() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="gold-divider mx-auto mt-6"
           />
@@ -145,7 +146,7 @@ export default function Results() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-2 mb-10"
         >
           {categories.map((cat) => (
@@ -193,7 +194,7 @@ export default function Results() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="text-center mt-12"
         >
           <p className="text-slate-500 mb-4">

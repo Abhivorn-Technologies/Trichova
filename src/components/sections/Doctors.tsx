@@ -60,7 +60,7 @@ export default function Doctors() {
                 <motion.div 
                   initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, margin: "-100px" }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="w-full md:w-2/5 shrink-0 relative group/image flex justify-center"
                 >
@@ -92,7 +92,7 @@ export default function Doctors() {
                 <motion.div 
                   initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, margin: "-100px" }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                   className="w-full md:w-3/5 flex flex-col justify-center"
                 >

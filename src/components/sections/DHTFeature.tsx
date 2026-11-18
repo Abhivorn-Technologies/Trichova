@@ -65,7 +65,7 @@ export default function DHTFeature() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="badge-gold">DHT Technology</span>
@@ -73,7 +73,7 @@ export default function DHTFeature() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="heading-section mb-4"
           >
@@ -83,7 +83,7 @@ export default function DHTFeature() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="gold-divider mx-auto mt-6"
           />
@@ -95,7 +95,7 @@ export default function DHTFeature() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
@@ -148,7 +148,7 @@ export default function DHTFeature() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ delay: 0.6 }}
               className="absolute -bottom-4 -right-4 bg-ivory rounded-2xl p-5 shadow-card-hover border border-gold/20 floating z-20"
             >
@@ -165,7 +165,7 @@ export default function DHTFeature() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ delay: 0.8 }}
               className="absolute -top-4 -left-4 bg-ivory rounded-2xl p-4 shadow-card-hover border border-gold/20 floating-delayed"
             >
@@ -185,7 +185,7 @@ export default function DHTFeature() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
@@ -210,7 +210,7 @@ export default function DHTFeature() {
                     key={benefit.title}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     transition={{ delay: 0.1 + i * 0.08 }}
                     whileHover={{ y: -3 }}
                     className="bg-ivory rounded-2xl p-4 shadow-card border border-gold/20 hover:border-gold/50 hover:shadow-card-hover transition-all duration-300"
@@ -232,7 +232,7 @@ export default function DHTFeature() {
                   key={label}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className="bg-ivory-dark rounded-2xl p-4 text-center border border-gold/20"
                 >

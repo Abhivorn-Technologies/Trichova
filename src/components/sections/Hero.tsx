@@ -99,7 +99,9 @@ export default function Hero() {
                   src={src}
                   alt="Trichova Hair Studio — advanced hair restoration"
                   fill
-                  priority
+                  priority={index === 0}
+                  sizes="100vw"
+                  quality={85}
                   className="object-cover object-center"
                   style={{ objectPosition: "center 30%" }}
                 />

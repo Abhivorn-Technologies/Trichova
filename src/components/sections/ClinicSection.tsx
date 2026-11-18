@@ -44,7 +44,7 @@ export default function ClinicSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="badge-gold">Our Clinic</span>
@@ -52,7 +52,7 @@ export default function ClinicSection() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="heading-section mb-4"
           >
@@ -62,7 +62,7 @@ export default function ClinicSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto"
           >
@@ -72,7 +72,7 @@ export default function ClinicSection() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="gold-divider mx-auto mt-6"
           />
@@ -83,7 +83,7 @@ export default function ClinicSection() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="relative order-1 lg:order-2"
           >
@@ -120,7 +120,7 @@ export default function ClinicSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ delay: 0.6 }}
               className="absolute -top-5 -left-5 bg-ivory rounded-2xl p-5 shadow-card-hover border border-gold/20 floating"
             >
@@ -143,7 +143,7 @@ export default function ClinicSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ delay: 0.8 }}
               className="absolute -bottom-5 -right-5 bg-ivory rounded-2xl p-5 shadow-card-hover border border-gold/20 floating-delayed"
             >
@@ -163,7 +163,7 @@ export default function ClinicSection() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="space-y-6 order-2 lg:order-1"
           >
@@ -194,7 +194,7 @@ export default function ClinicSection() {
                     key={feature.title}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     transition={{ delay: 0.2 + i * 0.08 }}
                     className="flex items-start gap-3 p-4 bg-ivory-dark rounded-2xl border border-gold/10 hover:border-gold/30 transition-all duration-300"
                   >

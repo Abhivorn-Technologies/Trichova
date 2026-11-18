@@ -25,7 +25,7 @@ export default function Comparison() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="badge-gold">Clinic Comparison</span>
@@ -33,7 +33,7 @@ export default function Comparison() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="heading-section mb-4"
           >
@@ -43,7 +43,7 @@ export default function Comparison() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto"
           >
@@ -52,7 +52,7 @@ export default function Comparison() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="gold-divider mx-auto mt-6"
           />
@@ -62,7 +62,7 @@ export default function Comparison() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="max-w-3xl mx-auto"
         >
@@ -96,7 +96,7 @@ export default function Comparison() {
                 key={feature}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 className={`grid grid-cols-3 gap-3 items-center ${
                   i % 2 === 0 ? "bg-ivory" : "bg-ivory-dark"
@@ -114,7 +114,7 @@ export default function Comparison() {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
                       className="relative z-10 w-8 h-8 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center"
                     >
@@ -124,7 +124,7 @@ export default function Comparison() {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
                       className="relative z-10 w-8 h-8 rounded-full bg-slate-100 border border-slate-200/60 flex items-center justify-center"
                     >
@@ -139,7 +139,7 @@ export default function Comparison() {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
                       className="w-8 h-8 rounded-full bg-red-50 border border-red-100 flex items-center justify-center"
                     >
@@ -149,7 +149,7 @@ export default function Comparison() {
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       transition={{ type: "spring", delay: 0.2 + i * 0.03 }}
                       className="w-8 h-8 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center"
                     >

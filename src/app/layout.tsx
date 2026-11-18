@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalLayoutWrapper from "@/components/layout/ConditionalLayoutWrapper";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Trichova Hair Studio | Advanced Hair Transplant & Restoration",
@@ -70,18 +83,8 @@ export default function RootLayout({
             gtag('config', 'G-H79FX4SS38');
           `}
         </Script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="font-sans antialiased bg-slate-950 text-slate-100" suppressHydrationWarning>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-slate-950 text-slate-100`} suppressHydrationWarning>
         <ConditionalLayoutWrapper>{children}</ConditionalLayoutWrapper>
       </body>
     </html>

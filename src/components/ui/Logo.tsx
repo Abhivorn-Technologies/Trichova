@@ -16,7 +16,6 @@ export default function Logo({ className, isScrolled = false }: LogoProps) {
         width={90}
         height={33}
         className={cn("object-contain transition-opacity duration-300", isScrolled ? "opacity-0 absolute" : "opacity-100")}
-        unoptimized
         priority
       />
       
@@ -27,7 +26,6 @@ export default function Logo({ className, isScrolled = false }: LogoProps) {
         width={90}
         height={33}
         className={cn("object-contain transition-opacity duration-300", isScrolled ? "opacity-100" : "opacity-0 absolute")}
-        unoptimized
         priority
       />
     </div>

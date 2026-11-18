@@ -117,7 +117,7 @@ export default function WhyTrichova() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-gold/10 text-gold border border-gold/30">
@@ -127,7 +127,7 @@ export default function WhyTrichova() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="heading-section-light mb-4"
           >
@@ -140,7 +140,7 @@ export default function WhyTrichova() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-ivory/70 max-w-2xl mx-auto text-lg"
           >
@@ -150,7 +150,7 @@ export default function WhyTrichova() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="w-16 h-1 rounded-full mx-auto mt-6 bg-gradient-gold"
           />
@@ -161,7 +161,7 @@ export default function WhyTrichova() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-50px" }}
+          viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
           {advantages.map((adv) => {
@@ -218,7 +218,7 @@ export default function WhyTrichova() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ delay: 0.4 }}
           className="mt-12 rounded-3xl p-8 text-center relative overflow-hidden border border-gold/20"
           style={{ background: "linear-gradient(135deg, rgba(201,161,90,0.08) 0%, rgba(216,182,122,0.05) 100%)" }}

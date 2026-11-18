@@ -79,7 +79,7 @@ export default function ConsultationCTA() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-gold/20 text-ivory/90 text-sm font-medium">
@@ -90,7 +90,7 @@ export default function ConsultationCTA() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="font-serif font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-tight mb-4"
           >
@@ -102,7 +102,7 @@ export default function ConsultationCTA() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-ivory/70 text-lg max-w-2xl mx-auto"
           >
@@ -116,7 +116,7 @@ export default function ConsultationCTA() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
             {submitted ? (
@@ -273,7 +273,7 @@ export default function ConsultationCTA() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="space-y-5"
           >

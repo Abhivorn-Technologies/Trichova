@@ -93,7 +93,7 @@ const services = [
   },
   {
     id: "gfc",
-    href: "/treatments",
+    href: "/treatments/gfc-treatment",
     icon: Droplets,
     title: "GFC Treatment",
     shortTitle: "GFC",
@@ -108,7 +108,7 @@ const services = [
   },
   {
     id: "exosome",
-    href: "/treatments",
+    href: "/treatments/exosome-therapy",
     icon: Sparkles,
     title: "Exosome Therapy",
     shortTitle: "Exosome",
@@ -165,7 +165,7 @@ export default function Services() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="flex justify-center mb-4"
           >
@@ -174,7 +174,7 @@ export default function Services() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="heading-section mb-4"
           >
@@ -184,7 +184,7 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto text-lg"
           >
@@ -194,7 +194,7 @@ export default function Services() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="gold-divider mx-auto mt-6"
           />
@@ -205,7 +205,7 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-50px" }}
+          viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
           {services.map((service) => {
@@ -264,7 +264,7 @@ export default function Services() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-14"
         >

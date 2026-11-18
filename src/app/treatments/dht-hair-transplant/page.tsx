@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function DHTPage() {
   return (
-    <main>
+    <main className="pt-20 lg:pt-28 bg-white">
       
       <div className="section-container py-10 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto space-y-6">

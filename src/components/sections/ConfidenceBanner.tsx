@@ -10,7 +10,7 @@ export default function ConfidenceBanner() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="relative w-full rounded-3xl overflow-hidden shadow-card border border-gold/20"
           style={{ minHeight: "400px", height: "60vh", maxHeight: "600px" }}

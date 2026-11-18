@@ -95,7 +95,7 @@ export default function Journey() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="flex justify-center mb-4"
           >
             <span className="badge-gold">Patient Journey</span>
@@ -103,7 +103,7 @@ export default function Journey() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="heading-section mb-4"
           >
@@ -113,7 +113,7 @@ export default function Journey() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-muted max-w-2xl mx-auto"
           >
@@ -123,7 +123,7 @@ export default function Journey() {
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="gold-divider mx-auto mt-6"
           />
@@ -142,7 +142,7 @@ export default function Journey() {
                   key={step.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   whileHover={{ y: -6 }}
                   className="relative flex flex-col items-center text-center group"
@@ -192,7 +192,7 @@ export default function Journey() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ delay: 0.6 }}
           className="mt-12 bg-ivory rounded-2xl p-6 shadow-card border border-gold/20"
         >
@@ -204,7 +204,7 @@ export default function Journey() {
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 2, ease: "easeOut", delay: 0.8 }}
               className="h-full rounded-full bg-gradient-to-r from-wood/50 via-gold to-gold-light"
             />

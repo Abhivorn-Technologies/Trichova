@@ -37,8 +37,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
       backgroundImage: {
         "gradient-hero": "linear-gradient(135deg, #0E1A2B 0%, #162B4D 45%, #223E68 100%)",

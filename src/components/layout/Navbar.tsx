@@ -19,7 +19,9 @@ const navLinks = [
       { label: "DHT Hair Transplant", href: "/treatments/dht-hair-transplant" },
       { label: "FUE Hair Transplant", href: "/treatments/fue-hair-transplant" },
       { label: "Female Hair Transplant", href: "/treatments/female-hair-transplant" },
-      { label: "Beard Transplant", href: "/treatments/beard-transplant" }
+      { label: "Beard Transplant", href: "/treatments/beard-transplant" },
+      { label: "GFC Treatment", href: "/treatments/gfc-treatment" },
+      { label: "Exosome Therapy", href: "/treatments/exosome-therapy" }
     ]
   },
   { label: "Results", href: "/results" },

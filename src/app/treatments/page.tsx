@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function TreatmentsPage() {
   return (
-    <main>
-            <Services />
+    <main className="pt-20 lg:pt-28 bg-ivory">
+      <Services />
       <Comparison />
     </main>
   );

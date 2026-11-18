@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function FUEPage() {
   return (
-    <main>
+    <main className="pt-20 lg:pt-28 bg-white">
       
       <div className="w-full bg-white">
         <div className="section-container py-16 md:py-20">

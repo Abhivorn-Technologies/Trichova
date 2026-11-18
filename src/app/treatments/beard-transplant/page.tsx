@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function BeardTransplantPage() {
   return (
-    <main>
+    <main className="pt-20 lg:pt-28 bg-ivory">
             
       <div className="section-container py-10 md:py-20 bg-ivory">
         <div className="max-w-4xl mx-auto">

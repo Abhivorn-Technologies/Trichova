@@ -73,7 +73,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="-mt-4 mb-2 relative scale-110 origin-left">
@@ -120,7 +120,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h3 className="font-semibold text-white text-base mb-6 flex items-center gap-2">
@@ -149,7 +149,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="font-semibold text-white text-base mb-6 flex items-center gap-2">
@@ -178,7 +178,7 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="font-semibold text-white text-base mb-6 flex items-center gap-2">
