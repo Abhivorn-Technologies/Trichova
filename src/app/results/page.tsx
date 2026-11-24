@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Results from "@/components/sections/Results";
+import VideoShowcase from "@/components/sections/VideoShowcase";
 
 export const metadata: Metadata = {
   title: "Before & After Results | Trichova Hair Studio",
@@ -10,6 +11,7 @@ export default function ResultsPage() {
   return (
     <main className="pt-12 md:pt-14 bg-ivory min-h-screen">
       <Results />
+      <VideoShowcase />
     </main>
   );
 }

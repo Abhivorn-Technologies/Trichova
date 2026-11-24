@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Sparkles, Dna, Activity, ShieldCheck, CheckCircle2, Zap } from "lucide-react";
 import ConsultationCTA from "@/components/sections/ConsultationCTA";
 
@@ -65,45 +66,58 @@ const procedureSteps = [
 export default function ExosomeTherapyPage() {
   return (
     <main className="pt-20 lg:pt-28 bg-white">
-      {/* Hero / Overview */}
-      <div className="section-container py-10 md:py-16">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <div className="text-left">
+      {/* Hero / Overview: Split side-by-side */}
+      <div className="section-container py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+          {/* Matter / Text side */}
+          <div className="space-y-4 text-left">
             <span className="badge-gold">Cutting-Edge Biotechnology</span>
-            <h1 className="heading-section mt-2 mb-2 text-3xl md:text-5xl text-left">
+            <h1 className="heading-section text-3xl md:text-4xl lg:text-5xl text-left leading-tight">
               Exosome Hair Therapy in <span className="gradient-text-gold">Hyderabad</span>
             </h1>
-            <h2 className="text-xl font-serif text-gold font-medium mb-6">
+            <h2 className="text-lg md:text-xl font-serif text-gold font-medium">
               Revolutionary Cell-Signaling Nanotechnology for Hair Follicle Regeneration
             </h2>
-          </div>
-
-          <div className="gold-divider" />
-
-          <div className="space-y-6 text-slate-600 leading-relaxed text-base">
-            <p className="text-lg text-navy-900 font-medium leading-relaxed">
+            <div className="gold-divider" />
+            <p className="text-lg text-navy-900 font-medium leading-relaxed pt-2">
               Exosome therapy represents the pinnacle of modern regenerative trichology. At Trichova Hair 
               Studio, our <strong>Exosome Hair Therapy in Hyderabad</strong> harnesses nanoscale extracellular 
               vesicles that act as microscopic messengers, commanding dormant hair cells to repair, rejuvenate, 
               and resume vigorous hair production.
             </p>
-            <p>
-              Hair loss occurs when the communication between stem cells and hair follicles breaks down due to genetics, 
-              aging, or environmental stress. Miniaturized follicles stop receiving instructions to grow. Exosomes bridge 
-              this cellular gap by delivering a concentrated cargo of over 1,000 regulatory proteins, growth factors, and 
-              genetic instructions (mRNA and microRNA) directly to the root of the hair follicle.
-            </p>
-            <p>
-              Unlike conventional treatments that merely stimulate surface blood flow, exosome therapy operates at the 
-              cellular signaling level. It accelerates cellular turnover, reduces scalp inflammation, prolongs the anagen 
-              (growth) phase, and prompts miniaturized hair follicles to produce noticeably thicker, healthier hair shafts.
-            </p>
-            <p>
-              At Trichova Hair Studio, our medical team uses rigorously tested, ultra-pure exosome preparations 
-              administered with precision micro-channeling techniques, delivering safe, non-invasive, and groundbreaking 
-              hair restoration without surgery or recovery downtime.
-            </p>
           </div>
+
+          {/* Image side */}
+          <div className="relative w-full aspect-[16/9] lg:aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden shadow-card-hover border border-gold/25">
+            <Image
+              src="/images/treatments/exosome-therapy.jpg"
+              alt="Exosome Hair Therapy in Hyderabad - Trichova Hair Studio"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+
+        {/* Detailed matter below */}
+        <div className="max-w-4xl mx-auto space-y-6 text-slate-600 leading-relaxed text-base border-t border-gold/15 pt-10">
+          <p>
+            Hair loss occurs when the communication between stem cells and hair follicles breaks down due to genetics, 
+            aging, or environmental stress. Miniaturized follicles stop receiving instructions to grow. Exosomes bridge 
+            this cellular gap by delivering a concentrated cargo of over 1,000 regulatory proteins, growth factors, and 
+            genetic instructions (mRNA and microRNA) directly to the root of the hair follicle.
+          </p>
+          <p>
+            Unlike conventional treatments that merely stimulate surface blood flow, exosome therapy operates at the 
+            cellular signaling level. It accelerates cellular turnover, reduces scalp inflammation, prolongs the anagen 
+            (growth) phase, and prompts miniaturized hair follicles to produce noticeably thicker, healthier hair shafts.
+          </p>
+          <p>
+            At Trichova Hair Studio, our medical team uses rigorously tested, ultra-pure exosome preparations 
+            administered with precision micro-channeling techniques, delivering safe, non-invasive, and groundbreaking 
+            hair restoration without surgery or recovery downtime.
+          </p>
         </div>
       </div>
 

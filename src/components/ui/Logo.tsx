@@ -11,17 +11,17 @@ export default function Logo({ className, isScrolled = false }: LogoProps) {
     <div className={cn("flex items-center justify-center", className)}>
       {/* White text logo for dark backgrounds (top of page / footer) */}
       <Image
-        src="/trichova_logo_white_text.png"
+        src="/trichova_logo_white_text_opt.webp"
         alt="Trichova Logo Light"
         width={90}
         height={33}
         className={cn("object-contain transition-opacity duration-300", isScrolled ? "opacity-0 absolute" : "opacity-100")}
         priority
       />
-      
+
       {/* Original Navy text logo for light backgrounds (scrolled navbar) */}
       <Image
-        src="/trichova_logo_transparent.png"
+        src="/trichova_logo_transparent_opt.webp"
         alt="Trichova Logo Dark"
         width={90}
         height={33}

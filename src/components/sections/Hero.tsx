@@ -41,8 +41,8 @@ const stats = [
 ];
 
 const heroImages = [
-  "/herosection-1.png",
-  "/herosection-2.png"
+  "/herosection-1.webp",
+  "/herosection-2.webp"
 ];
 
 export default function Hero() {
@@ -100,8 +100,8 @@ export default function Hero() {
                   alt="Trichova Hair Studio — advanced hair restoration"
                   fill
                   priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
                   sizes="100vw"
-                  quality={85}
                   className="object-cover object-center"
                   style={{ objectPosition: "center 30%" }}
                 />

@@ -10,14 +10,14 @@ const doctors = [
     qualifications: "(M.S., M.Ch)",
     description:
       "Dr. Jagadish Kiran, M.B.B.S., M.S. (General Surgery), M.Ch. (Plastic Surgery), is a board-certified cosmetic, plastic, and reconstructive surgeon with over 14 years of expertise. He completed fellowship training in cosmetic surgery, specializing in procedures such as Hair Transplant, gynecomastia, liposuction, breast augmentation and reduction, rhinoplasty, and non-surgical treatments like injectable dermal fillers. Renowned for his precision and premium treatments, his clinic is one of the premier plastic surgery centers in the state.",
-    image: "/images/Doctor-2.png",
+    image: "/images/Doctor-2.webp",
   },
   {
     name: "Dr. Suma Sandhyala",
     qualifications: "(M.S., M.Ch)",
     description:
       "Dr. S. Suma is a Consultant Plastic, Cosmetic, and Reconstructive Surgeon. She graduated from NTR University of Health Sciences with an MBBS degree, earning the Best Outgoing Student award. She completed her MS in General Surgery from the same university and received the Best Resident Award in Plastic Surgery while obtaining her M.Ch from Nizam Institute of Medical Sciences, Hyderabad. Dr. Suma also holds an Observership in Cosmetic Surgery from New York and a Certification in Laser Treatment.",
-    image: "/images/Doctor-1.png",
+    image: "/images/Doctor-1.webp",
   },
 ];
 

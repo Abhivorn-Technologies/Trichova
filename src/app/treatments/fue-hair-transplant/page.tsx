@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Technology from "@/components/sections/Technology";
 
 export const metadata: Metadata = {
@@ -19,34 +20,48 @@ export default function FUEPage() {
     <main className="pt-20 lg:pt-28 bg-white">
       
       <div className="w-full bg-white">
-        <div className="section-container py-16 md:py-20">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <div className="text-left">
-            <span className="badge-gold">Modern Procedure</span>
-            <h2 className="heading-section mt-2 mb-2 text-3xl md:text-4xl text-left">
-              FUE Hair Transplant in <span className="gradient-text-gold">Hyderabad</span>
-            </h2>
-            <h3 className="text-xl font-serif text-gold font-medium mb-6">
-              A Modern Approach to Natural Hair Restoration
-            </h3>
+        <div className="section-container py-12 md:py-16">
+          {/* Split Hero: Matter on one side, Image on the other */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+            {/* Matter / Text side */}
+            <div className="space-y-4 text-left">
+              <span className="badge-gold">Modern Procedure</span>
+              <h1 className="heading-section text-3xl md:text-4xl lg:text-5xl text-left leading-tight">
+                FUE Hair Transplant in <span className="gradient-text-gold">Hyderabad</span>
+              </h1>
+              <h2 className="text-lg md:text-xl font-serif text-gold font-medium">
+                A Modern Approach to Natural Hair Restoration
+              </h2>
+              <div className="gold-divider" />
+              <p className="text-slate-600 leading-relaxed text-base pt-2">
+                Losing your hair doesn't happen overnight, and neither should the decision to undergo a hair 
+                transplant. Whether you've noticed a gradually receding hairline, thinning at the crown, or 
+                visible bald patches, finding the right treatment begins with understanding your hair loss and 
+                choosing a solution that suits your individual needs.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-base">
+                At Trichova Hair Studio, we offer <strong>FUE Hair Transplant in Hyderabad</strong> for individuals 
+                looking for a minimally invasive procedure that delivers natural-looking, long-lasting results. 
+                Every treatment is carefully planned after evaluating your scalp, donor hair quality, hair 
+                density, and future hair loss pattern.
+              </p>
+            </div>
+
+            {/* Image side */}
+            <div className="relative w-full aspect-[16/9] lg:aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden shadow-card-hover border border-gold/25">
+              <Image
+                src="/images/treatments/fue-hair-transplant.jpg"
+                alt="FUE Hair Transplant in Hyderabad - Trichova Hair Studio"
+                fill
+                priority
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
-          
-          <div className="gold-divider" />
-          
-          <div className="space-y-6 text-slate-600 leading-relaxed text-base">
-            <p>
-              Losing your hair doesn't happen overnight, and neither should the decision to undergo a hair 
-              transplant. Whether you've noticed a gradually receding hairline, thinning at the crown, or 
-              visible bald patches, finding the right treatment begins with understanding your hair loss and 
-              choosing a solution that suits your individual needs.
-            </p>
-            <p>
-              At Trichova Hair Studio, we offer <strong>FUE Hair Transplant in Hyderabad</strong> for individuals 
-              looking for a minimally invasive procedure that delivers natural-looking, long-lasting results. 
-              Every treatment is carefully planned after evaluating your scalp, donor hair quality, hair 
-              density, and future hair loss pattern. Instead of following a standard approach, we create a 
-              personalized treatment plan designed specifically for you.
-            </p>
+
+          {/* Detailed matter below */}
+          <div className="max-w-4xl mx-auto space-y-6 text-slate-600 leading-relaxed text-base border-t border-gold/15 pt-10">
             <p>
               Follicular Unit Extraction (FUE) is one of the most preferred hair restoration methods 
               because it involves extracting individual hair follicles from the donor area and implanting 
@@ -67,7 +82,6 @@ export default function FUEPage() {
               combines clinical expertise, personalized care, and meticulous treatment planning to help 
               you achieve results that look natural today and continue to look natural in the years to come.
             </p>
-          </div>
           </div>
         </div>
       </div>

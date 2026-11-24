@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Droplets, ShieldCheck, Zap, Sparkles, Clock, CheckCircle2 } from "lucide-react";
 import ConsultationCTA from "@/components/sections/ConsultationCTA";
 
@@ -66,46 +67,59 @@ const benefits = [
 export default function GFCTreatmentPage() {
   return (
     <main className="pt-20 lg:pt-28 bg-white">
-      {/* Hero / Overview */}
-      <div className="section-container py-10 md:py-16">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <div className="text-left">
+      {/* Hero / Overview: Split side-by-side */}
+      <div className="section-container py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+          {/* Matter / Text side */}
+          <div className="space-y-4 text-left">
             <span className="badge-gold">Non-Surgical Protocol</span>
-            <h1 className="heading-section mt-2 mb-2 text-3xl md:text-5xl text-left">
+            <h1 className="heading-section text-3xl md:text-4xl lg:text-5xl text-left leading-tight">
               GFC Treatment in <span className="gradient-text-gold">Hyderabad</span>
             </h1>
-            <h2 className="text-xl font-serif text-gold font-medium mb-6">
+            <h2 className="text-lg md:text-xl font-serif text-gold font-medium">
               Advanced Growth Factor Concentrate for Natural Hair Regeneration
             </h2>
-          </div>
-
-          <div className="gold-divider" />
-
-          <div className="space-y-6 text-slate-600 leading-relaxed text-base">
-            <p className="text-lg text-navy-900 font-medium leading-relaxed">
+            <div className="gold-divider" />
+            <p className="text-lg text-navy-900 font-medium leading-relaxed pt-2">
               If you are experiencing progressive hair thinning, excessive shedding, or early-stage hair 
               loss, surgical intervention may not always be necessary. At Trichova Hair Studio, 
               our <strong>GFC (Growth Factor Concentrate) Treatment in Hyderabad</strong> provides a refined, 
               medical-grade regenerative therapy designed to strengthen existing roots, boost volume, and 
               reinvigorate dormant hair follicles.
             </p>
-            <p>
-              Unlike conventional PRP (Platelet-Rich Plasma), which retains red and white blood cells that can cause 
-              scalp inflammation and varying results, GFC is an engineered acellular formulation. It captures only pure, 
-              biologically active growth factors—such as Platelet-Derived Growth Factor (PDGF), Vascular Endothelial 
-              Growth Factor (VEGF), Epidermal Growth Factor (EGF), and Insulin-like Growth Factor 1 (IGF-1).
-            </p>
-            <p>
-              These powerful biological messengers stimulate microvascular circulation around weakened follicles, 
-              prolong the hair follicle's anagen (active growth) phase, and reverse the miniaturization process common in 
-              androgenetic alopecia and stress-induced hair loss.
-            </p>
-            <p>
-              At Trichova Hair Studio, every GFC treatment begins with an in-depth trichoscopic scalp evaluation by 
-              our senior hair specialists. We calibrate session intervals, monitor graft health, and combine treatments 
-              with personalized medical therapy to deliver consistent, clinically measurable results.
-            </p>
           </div>
+
+          {/* Image side */}
+          <div className="relative w-full aspect-[16/9] lg:aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden shadow-card-hover border border-gold/25">
+            <Image
+              src="/images/treatments/gfc-treatment.jpg"
+              alt="GFC Treatment in Hyderabad - Trichova Hair Studio"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+
+        {/* Detailed matter below */}
+        <div className="max-w-4xl mx-auto space-y-6 text-slate-600 leading-relaxed text-base border-t border-gold/15 pt-10">
+          <p>
+            Unlike conventional PRP (Platelet-Rich Plasma), which retains red and white blood cells that can cause 
+            scalp inflammation and varying results, GFC is an engineered acellular formulation. It captures only pure, 
+            biologically active growth factors—such as Platelet-Derived Growth Factor (PDGF), Vascular Endothelial 
+            Growth Factor (VEGF), Epidermal Growth Factor (EGF), and Insulin-like Growth Factor 1 (IGF-1).
+          </p>
+          <p>
+            These powerful biological messengers stimulate microvascular circulation around weakened follicles, 
+            prolong the hair follicle's anagen (active growth) phase, and reverse the miniaturization process common in 
+            androgenetic alopecia and stress-induced hair loss.
+          </p>
+          <p>
+            At Trichova Hair Studio, every GFC treatment begins with an in-depth trichoscopic scalp evaluation by 
+            our senior hair specialists. We calibrate session intervals, monitor graft health, and combine treatments 
+            with personalized medical therapy to deliver consistent, clinically measurable results.
+          </p>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Results from "@/components/sections/Results";
+import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyTrichova from "@/components/sections/WhyTrichova";
 import HomeSEOSection from "@/components/sections/HomeSEOSection";
 import ConsultationCTA from "@/components/sections/ConsultationCTA";
@@ -28,6 +29,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Results />
+      <VideoShowcase />
       <WhyTrichova />
       <HomeSEOSection />
       <ConsultationCTA />

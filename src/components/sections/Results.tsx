@@ -14,7 +14,7 @@ const results = [
     name: "Natural Hair Growth",
     technique: "BIO-FUE",
     grade: "ADVANCED",
-    image: "/images/trichova-1.jpg",
+    image: "/images/trichova-1.webp",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const results = [
     name: "4500 Grafts Restoration",
     technique: "BIOFUE",
     grade: "4500 GRAFTS",
-    image: "/images/trichova-2.jpg",
+    image: "/images/trichova-2.webp",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const results = [
     name: "3000 Grafts Restoration",
     technique: "SAPPHIRE",
     grade: "3000 GRAFTS",
-    image: "/images/trichova-3.jpg",
+    image: "/images/trichova-3.webp",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const results = [
     name: "5500 Grafts Restoration",
     technique: "BIO-FUE",
     grade: "5500 GRAFTS",
-    image: "/images/trichova-4.jpg",
+    image: "/images/trichova-4.webp",
   },
 ];
 
@@ -75,13 +75,13 @@ function BeforeAfterCard({
       </div>
 
       {/* Info Footer */}
-      <div className="p-4 flex items-center justify-between bg-white border-t border-slate-50">
-        <h3 className="font-semibold text-slate-800 text-sm">{result.name}</h3>
-        <div className="flex items-center gap-2">
-          <span className="px-2.5 py-1 rounded-full bg-orange-50 text-[#FF6B35] text-[9px] font-bold uppercase tracking-wider">
+      <div className="p-4 flex items-center justify-between gap-2 bg-white border-t border-slate-50">
+        <h3 className="font-semibold text-slate-800 text-sm truncate">{result.name}</h3>
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          <span className="px-2.5 py-1 rounded-full bg-orange-50 text-[#FF6B35] text-[9px] font-bold uppercase tracking-wider whitespace-nowrap">
             {result.technique}
           </span>
-          <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 text-[9px] font-bold uppercase tracking-wider">
+          <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 text-[9px] font-bold uppercase tracking-wider whitespace-nowrap">
             {result.grade}
           </span>
         </div>
@@ -245,11 +245,11 @@ export default function Results() {
                     />
                     <div className="w-full px-4 py-3 flex items-center justify-between text-white border-t border-white/10 mt-2">
                       <span className="font-medium text-sm text-ivory">{active.name}</span>
-                      <div className="flex items-center gap-2">
-                        <span className="px-2.5 py-0.5 rounded-full bg-orange-500/20 text-[#FF6B35] text-xs font-semibold">
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <span className="px-2.5 py-0.5 rounded-full bg-orange-500/20 text-[#FF6B35] text-xs font-semibold whitespace-nowrap">
                           {active.technique}
                         </span>
-                        <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-semibold">
+                        <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-semibold whitespace-nowrap">
                           {active.grade}
                         </span>
                       </div>
